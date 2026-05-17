@@ -167,6 +167,7 @@
             border-bottom: 3px solid var(--bright-gold);
             padding-bottom: 10px;
             margin-top: 45px;
+            text-align: center;
         }
 
         /* Live Audience Widget */
@@ -260,72 +261,102 @@
             border-left: 6px solid var(--gold-glow);
         }
 
-        /* ADVANCED GRID: 3D Layout for Ten Mahavidyas */
-        .mahavidya-container {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin: 25px 0;
+        /* ==========================================
+           PREMIUM WEBSITE 10 MAHAVIDYA GRID PATTERN 
+           ========================================== */
+        .mahavidya-section-box {
+            background: #e6b800; /* Rich Yellow Pattern Background like screenshot */
+            padding: 20px 15px;
+            border-radius: 20px;
+            margin: 30px 0;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+            border: 4px solid #b38600;
         }
-        .mahavidya-card {
-            background: linear-gradient(145deg, #2b0507, #420a0e);
-            border: 1px solid rgba(255, 215, 0, 0.25);
-            border-radius: 16px;
-            padding: 18px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-            transition: all 0.3s ease;
+        .mahavidya-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 Columns Layout for compact scannability */
+            gap: 15px;
+            margin-top: 15px;
         }
-        .mahavidya-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold-glow);
+        @media(min-width: 480px) {
+            .mahavidya-grid {
+                grid-template-columns: repeat(5, 1fr); /* 5 Columns on Desktop */
+            }
         }
-        .mahavidya-3d-frame {
-            width: 100%;
-            height: auto;
+        .mahavidya-item {
+            background: #2b0507;
             border-radius: 12px;
-            overflow: hidden;
+            padding: 8px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
             border: 2px solid var(--bright-gold);
-            margin-bottom: 15px;
+            transition: all 0.3s;
         }
-        .mahavidya-3d-frame img {
+        .mahavidya-item:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 15px var(--gold-glow);
+        }
+        .mahavidya-img-frame {
             width: 100%;
-            height: auto;
-            display: block;
+            aspect-ratio: 1/1;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #fff;
+            margin-bottom: 8px;
+            background: #000;
         }
-        .mahavidya-name {
-            color: var(--gold-glow);
-            font-size: 22px;
+        .mahavidya-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Dynamic Badges according to screenshot style */
+        .m-badge {
+            font-size: 13px;
             font-weight: 700;
+            color: white;
+            padding: 4px 2px;
+            border-radius: 4px;
+            display: block;
+            margin-bottom: 6px;
             font-family: 'Noto Serif Devanagari', serif;
         }
-        .mahavidya-desc {
-            font-size: 14.5px;
-            color: #ebd6d6;
-        }
+        .bg-kali { background-color: #111111; border: 1px solid #333; }
+        .bg-tara { background-color: #27ae60; border: 1px solid #1e7e43; }
+        .bg-tripura { background-color: #d35400; border: 1px solid #a04000; }
+        .bg-bhuvan { background-color: #2980b9; border: 1px solid #1f618d; }
+        .bg-chinnam { background-color: #c0392b; border: 1px solid #962d22; }
+        .bg-bhairavi { background-color: #8e44ad; border: 1px solid #6c3483; }
+        .bg-dhuma { background-color: #7f8c8d; border: 1px solid #5d6d7e; }
+        .bg-bagla { background-color: #d4ac0d; color: #000; border: 1px solid #9a7d0a; }
+        .bg-matangi { background-color: #16a085; border: 1px solid #117a65; }
+        .bg-kamala { background-color: #e91e63; border: 1px solid #c2185b; }
 
         /* Expandable Trigger Button for Bhairav */
         .bhairav-trigger {
             background: linear-gradient(90deg, #6e0005, #9c0007);
             color: #ffffff;
             border: 1px solid var(--bright-gold);
-            padding: 8px 16px;
-            font-size: 13.5px;
+            padding: 4px 6px;
+            font-size: 11px;
             font-weight: 600;
-            border-radius: 6px;
+            border-radius: 4px;
             cursor: pointer;
-            margin: 8px 0;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
         }
         .bhairav-details {
             display: none;
-            background: rgba(0, 0, 0, 0.4);
-            padding: 14px;
-            border-radius: 8px;
-            border-left: 4px solid var(--gold-glow);
-            margin-top: 10px;
-            font-size: 14px;
+            background: #000000;
+            padding: 8px;
+            border-radius: 6px;
+            margin-top: 8px;
+            font-size: 11px;
+            text-align: left;
+            line-height: 1.4;
+            border: 1px dashed var(--bright-gold);
         }
         .bhairav-details strong {
             color: var(--gold-glow);
@@ -421,6 +452,7 @@
             font-weight: 700;
             cursor: pointer;
             text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 81, 0, 0.4);
         }
 
         /* Digital Receipt */
@@ -432,6 +464,106 @@
             padding: 20px;
             border-radius: 12px;
             margin-top: 20px;
+        }
+        
+        .pay-now-btn {
+            width: 100%;
+            background: linear-gradient(90deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 15px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+        }
+
+        /* Smart Premium Payment Gateway Modal Popup */
+        .payment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .payment-card {
+            background: #ffffff;
+            color: #333333;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            border: 4px solid var(--pitambari);
+            animation: slideUp 0.4s ease;
+        }
+        .pay-header {
+            background: linear-gradient(135deg, var(--royal-crimson), #6e0005);
+            color: var(--gold-glow);
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .pay-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .pay-amount-box {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 22px;
+            font-weight: 700;
+            color: #b30000;
+            margin-bottom: 15px;
+        }
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .pay-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            background: #ffffff;
+            transition: all 0.2s;
+        }
+        .pay-option:hover {
+            background: #fff9e6;
+            border-color: var(--bright-gold);
+        }
+        .pay-footer {
+            padding: 15px;
+            background: #f1f1f1;
+            text-align: center;
+        }
+        .close-pay-btn {
+            background: #777;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
         }
 
         /* Sticky Footer Call to Action Bar */
@@ -483,6 +615,10 @@
             50% { transform: scale(1.2); opacity: 1; }
             100% { transform: scale(0.8); opacity: 0.5; }
         }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -519,6 +655,134 @@
             </div>
         </div>
 
+        <div class="mahavidya-section-box">
+            <h2 style="color: #4a0004; border-bottom: 3px solid #4a0004; margin-top: 5px; margin-bottom: 10px;">दश महाविद्या एवं सिद्ध पीठ</h2>
+            
+            <div class="mahavidya-grid">
+                
+                <div class="mahavidya-item">
+                    <span class="m-badge bg-kali">काली</span>
+                    <div class="mahavidya-img-frame">
+                        <img src="1000411639.jpg" alt="माँ काली">
+                    </div>
+                    <button class="bhairav-trigger" onclick="toggleBhairav('b1')">मंत्र रहस्य</button>
+                    <div id="b1" class="bhairav-details">
+                        <strong>भैरव:</strong> श्री महाकाल भैरव<br>
+                        <strong>मंत्र:</strong> ॐ क्रीं क्रीं दक्षिणे कालिकाके स्वाहा॥
+                    </div>
+                </div>
+
+                <div class="mahavidya-item">
+                    <span class="m-badge bg-tara">तारा</span>
+                    <div class="mahavidya-img-frame">
+                        <img src="1000411640.jpg" alt="माँ तारा">
+                    </div>
+                    <button class="bhairav-trigger" onclick="toggleBhairav('b2')">मंत्र रहस्य</button>
+                    <div id="b2" class="bhairav-details">
+                        <strong>भैरव:</strong> श्री अक्षोभ्य भैरव<br>
+                        <strong>मंत्र:</strong> ॐ ह्रीं स्त्रीं हुं फट्॥
+                    </div>
+                </div>
+
+                <div class="mahavidya-item">
+                    <span class="m-badge bg-tripura">त्रिपुरा सुंदरी</span>
+                    <div class="mahavidya-img-frame">
+                        <img src="1000411648.jpg" alt="माँ त्रिपुर सुंदरी">
+                    </div>
+                    <button class="bhairav-trigger" onclick="toggleBhairav('b3')">मंत्र रहस्य</button>
+                    <div id="b3" class="bhairav-details">
+                        <strong>भैरव:</strong> श्री ललितेश्वर भैरव<br>
+                        <strong>मंत्र:</strong> क ए ई ल ह्रीं ह स क ह ल ह्रीं स क ल ह्रीं॥
+                    </div>
+                </div>
+
+                <div class="mahavidya-item">
+                    <span class="m-badge bg-bhuvan">भुवनेश्वरी</span>
+                    <div class="mahavidya-img-frame">
+                        <img src="1000411649.jpg" alt="माँ भुवनेश्वरी">
+                    </div>
+                    <button class="bhairav-trigger" onclick="toggleBhairav('b4')">मंत्र रहस्य</button>
+                    <div id="b4" class="bhairav-details">
+                        <strong>भैरव:</strong> श्री त्रयम्बक भैरव<br>
+                        <strong>मंत्र:</strong> ॐ ह्रीं भुवनेश्वर्यै नमः॥
+                    </div>
+                </div>
+
+                <div class="mahavidya-item">
+                    <span class="m-badge bg-chinnam">छिन्नमस्ता</span>
+                    <div class="mahavidya-img-frame">
+                        <img src="1000411650.jpg" alt="माँ छिन्नमस्ता">
+                    </div>
+                    <button class="bhairav-trigger" onclick="toggleBhairav('b5')">मंत्र रहस्य</button>
+                    <div id="b5" class="bhairav-details">
+                        <strong>भैरव:</strong> श्री विकराळ भैरव<br>
+                        <strong>मंत्र:</strong> श्रीं ह्रीं क्लीं ऐं वज्र वैरोचनीये हुं हुं फट्॥
+                    </div>
+                </div>
+
+                <div class="mahavidya-item">
+                    <span class="m-badge bg-bhairavi">भैरवी</span>
+                    <div class="mahavidya-img-frame">
+                        <img src="1000411651.jpg" alt="माँ त्रिपुर भैरवी">
+                    </div>
+                    <button class="bhairav-trigger" onclick="toggleBhairav('b6')">मंत्र रहस्य</button>
+                    <div id="b6" class="bhairav-details">
+                        <strong>भैरव:</strong> श्री काल भैरव<br>
+                        <strong>मंत्र:</strong> ॐ ह्रीं भैरवी कलौं ह्रीं स्वाहा॥
+                    </div>
+                </div>
+
+                <div class="mahavidya-item">
+                    <span class="m-badge bg-dhuma">धूमावती</span>
+                    <div class="mahavidya-img-frame">
+                        <img src="1000411652.jpg" alt="माँ धूमावती">
+                    </div>
+                    <button class="bhairav-trigger" onclick="toggleBhairav('b7')">मंत्र रहस्य</button>
+                    <div id="b7" class="bhairav-details">
+                        <strong>भैरव:</strong> श्री अघोर रुद्र<br>
+                        <strong>मंत्र:</strong> ॐ धूं धूं धूमावत्यै फट्॥
+                    </div>
+                </div>
+
+                <div class="mahavidya-item">
+                    <span class="m-badge bg-bagla">बगलामुखी</span>
+                    <div class="mahavidya-img-frame">
+                        <img src="1000411653.jpg" alt="माँ बगलामुखी">
+                    </div>
+                    <button class="bhairav-trigger" onclick="toggleBhairav('b8')">मंत्र रहस्य</button>
+                    <div id="b8" class="bhairav-details">
+                        <strong>भैरव:</strong> श्री महारुद्र भैरव<br>
+                        <strong>मंत्र:</strong> ॐ ह्लीं बगलामुखी सर्वदुष्टानां वाचं मुखं पदं स्तम्भय जिह्व्हा कीलय बुद्धिं विनाशय ह्लीं ॐ स्वाहा॥
+                    </div>
+                </div>
+
+                <div class="mahavidya-item">
+                    <span class="m-badge bg-matangi">मातंगी</span>
+                    <div class="mahavidya-img-frame">
+                        <img src="1000411654.jpg" alt="माँ मातंगी">
+                    </div>
+                    <button class="bhairav-trigger" onclick="toggleBhairav('b9')">मंत्र रहस्य</button>
+                    <div id="b9" class="bhairav-details">
+                        <strong>भैरव:</strong> श्री मतंग भैरव<br>
+                        <strong>मंत्र:</strong> ॐ ह्रीं क्लीं हूँ मातंग्यै फट्॥
+                    </div>
+                </div>
+
+                <div class="mahavidya-item">
+                    <span class="m-badge bg-kamala">कमला</span>
+                    <div class="mahavidya-img-frame">
+                        <img src="1000411656.jpg" alt="माँ कमला">
+                    </div>
+                    <button class="bhairav-trigger" onclick="toggleBhairav('b10')">मंत्र रहस्य</button>
+                    <div id="b10" class="bhairav-details">
+                        <strong>भैरव:</strong> श्री सदाशिव भैरव<br>
+                        <strong>मंत्र:</strong> ॐ श्रीं ह्रीं श्रीं कमले कमलालये प्रसीद प्रसीद महालक्ष्म्यै नमः॥
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
         <div class="temple-timing-alert">
             <div style="font-size: 19px; font-weight: bold; color: var(--gold-glow); margin-bottom: 6px;">🛕 श्री सिद्धपीठ दर्शन एवं पट खुलने का समय</div>
             <div class="timing-text">प्रातः मंगला आरती पट खुलने का समय: <span class="timing-highlight">सुबह 06:00 बजे</span></div>
@@ -543,123 +807,6 @@
         <h2>✨ माँ बगलामुखी की अलौकिक उत्पत्ति कथा</h2>
         <div class="story-card">
             <p>पौराणिक सतयुग कालीन धर्म ग्रंथों के अनुसार, जब संपूर्ण सृष्टि को नष्ट करने वाला भयानक तूफान उठा, तब भगवान विष्णु ने सौराष्ट्र देश में स्थित <strong>"हरिद्रा सरोवर"</strong> के तट पर घोर तपस्या की। भगवान के तप से प्रसन्न होकर माघ शुक्ल अष्टमी तिथि को सरोवर के मध्य से दिव्य तेज के साथ <strong>माता बगलामुखी</strong> प्रकट हुईं। ब्रह्मांडीय स्तंभन शक्ति की अधिष्ठात्री होने के कारण इन्हें 'बगलामुखी' और पीत वर्ण (पीला रंग) अत्यंत प्रिय होने के कारण 'पीताम्बरा' भी कहा जाता है। नलखेड़ा का यह सिद्धपीठ महाभारत कालीन माना जाता है, जहाँ महाराज युधिष्ठिर ने महाभारत युद्ध में विजय प्राप्ति हेतु साधना की थी। यही कारण है कि आज भी राजनीति में शत्रुओं को परास्त करने के लिए राजनेता यहाँ खिंचे चले आते हैं।</p>
-        </div>
-
-        <h2>🔱 दस महाविद्याएँ एवं उनके रक्षक महाभैरव रहस्य</h2>
-        <p style="font-size: 14.5px; color: #d1b2b4;">प्रत्येक महाविद्या के नीचे दिए गए गुप्त बटन को दबाकर उनके रक्षक भैरव देव का नाम और तांत्रिक मूल बीज मंत्र प्राप्त करें:</p>
-        
-        <div class="mahavidya-container">
-            
-            <div class="mahavidya-card">
-                <div class="mahavidya-3d-frame"><img src="1000411639.jpg" alt="बगलामुखी मंदिर नलखेड़ा माँ काली"></div>
-                <div class="mahavidya-name">१. माँ काली</div>
-                <div class="mahavidya-desc">सर्वप्रथम महाविद्या जो काल, अकाल मृत्यु, समय चक्र और तीव्र संकटों का समूल नाश करने वाली सर्वोच्च शक्ति हैं।</div>
-                <div class="bhairav-trigger" onclick="toggleBhairav('b1')">👁️ भैरव स्वरूप एवं गुप्त मंत्र जानें</div>
-                <div id="b1" class="bhairav-details">
-                    <strong>सम्बन्धित महाभैरव:</strong> श्री महाकाल भैरव <br>
-                    <strong>तान्त्रिक मूल मंत्र:</strong> ॐ क्रीं क्रीं क्रीं दक्षिणे कालिकाके स्वाहा॥
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-3d-frame"><img src="1000411640.jpg" alt="बगलामुखी मंदिर नलखेड़ा माँ तारा"></div>
-                <div class="mahavidya-name">२. माँ तारा</div>
-                <div class="mahavidya-desc">संसार रूपी कठिन सागर को पार लगाने वाली, वाक-सिद्धि, कुशाग्र बुद्धि और दरिद्रता निवारण की देवी।</div>
-                <div class="bhairav-trigger" onclick="toggleBhairav('b2')">👁️ भैरव स्वरूप एवं गुप्त मंत्र जानें</div>
-                <div id="b2" class="bhairav-details">
-                    <strong>सम्बन्धित महाभैरव:</strong> श्री अक्षोभ्य भैरव <br>
-                    <strong>तान्त्रिक मूल मंत्र:</strong> ॐ ह्रीं स्त्रीं हुं फट्॥
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-3d-frame"><img src="1000411648.jpg" alt="बगलामुखी मंदिर नलखेड़ा माँ त्रिपुर सुंदरी"></div>
-                <div class="mahavidya-name">३. माँ त्रिपुर सुंदरी (षोडशी)</div>
-                <div class="mahavidya-desc">तीनों लोकों के अलौकिक सौंदर्य और अखंड साम्राज्य की स्वामिनी राजराजेश्वरी स्वरूप, जो भोग व मोक्ष दोनों देती हैं।</div>
-                <div class="bhairav-trigger" onclick="toggleBhairav('b3')">👁️ भैरव स्वरूप एवं गुप्त मंत्र जानें</div>
-                <div id="b3" class="bhairav-details">
-                    <strong>सम्बन्धित महाभैरव:</strong> श्री ललितेश्वर / पंचवक्त्र भैरव <br>
-                    <strong>तान्त्रिक मूल मंत्र:</strong> क ए ई ल ह्रीं ह स क ह ल ह्रीं स क ल ह्रीं॥
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-3d-frame"><img src="1000411649.jpg" alt="बगलामुखी मंदिर नलखेड़ा माँ भुवनेश्वरी"></div>
-                <div class="mahavidya-name">४. माँ भुवनेश्वरी</div>
-                <div class="mahavidya-desc">चौदह भुवनों एवं पंचभूतों का संचालन करने वाली जगतमाता, जो भूमि लाभ, यश और समाज में सर्वोच्च सम्मान देती हैं।</div>
-                <div class="bhairav-trigger" onclick="toggleBhairav('b4')">👁️ भैरव स्वरूप एवं गुप्त मंत्र जानें</div>
-                <div id="b4" class="bhairav-details">
-                    <strong>सम्बन्धित महाभैरव:</strong> श्री त्रयम्बक भैरव <br>
-                    <strong>तान्त्रिक मूल मंत्र:</strong> ॐ ह्रीं भुवनेश्वर्यै नमः॥
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-3d-frame"><img src="1000411650.jpg" alt="बगलामुखी मंदिर नलखेड़ा माँ छिन्नमस्ता"></div>
-                <div class="mahavidya-name">५. माँ छिन्नमस्ता</div>
-                <div class="mahavidya-desc">तीव्र तांत्रिक कुण्डलिनी जागरण चेतना की अधिष्ठात्री, जो मानसिक भ्रमों और शत्रुओं का तत्क्षण उच्छेदन करती हैं।</div>
-                <div class="bhairav-trigger" onclick="toggleBhairav('b5')">👁️ भैरव स्वरूप एवं गुप्त मंत्र जानें</div>
-                <div id="b5" class="bhairav-details">
-                    <strong>सम्बन्धित महाभैरव:</strong> श्री विकराळ भैरव <br>
-                    <strong>तान्त्रिक मूल मंत्र:</strong> श्रीं ह्रीं क्लीं ऐं वज्र वैरोचनीये हुं हुं फट् स्वाहा॥
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-3d-frame"><img src="1000411651.jpg" alt="बगलामुखी मंदिर नलखेड़ा माँ त्रिपुर भैरवी"></div>
-                <div class="mahavidya-name">६. माँ त्रिपुर भैरवी</div>
-                <div class="mahavidya-desc">रौद्र रूपा परम तेजमयी शक्ति, जो साधक के जीवन से समस्त भय, नजर दोष, तंत्र बाधा और प्रेत बाधा को भस्म करती हैं।</div>
-                <div class="bhairav-trigger" onclick="toggleBhairav('b6')">👁️ भैरव स्वरूप एवं गुप्त मंत्र जानें</div>
-                <div id="b6" class="bhairav-details">
-                    <strong>सम्बन्धित महाभैरव:</strong> स्वयं भगवान काल भैरव <br>
-                    <strong>तान्त्रिक मूल मंत्र:</strong> ॐ ह्रीं भैरवी कलौं ह्रीं स्वाहा॥
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-3d-frame"><img src="1000411652.jpg" alt="बगलामुखी मंदिर नलखेड़ा माँ धूमावती"></div>
-                <div class="mahavidya-name">७. माँ धूमावती</div>
-                <div class="mahavidya-desc">संकट विनाशिनी ज्येष्ठा लक्ष्मी स्वरूप। यह कठिन दुखों, दरिद्रता, रोग-शोक को सोखकर साधक की रक्षा करती हैं।</div>
-                <div class="bhairav-trigger" onclick="toggleBhairav('b7')">👁️ भैरव स्वरूप एवं गुप्त मंत्र जानें</div>
-                <div id="b7" class="bhairav-details">
-                    <strong>सम्बन्धित महाभैरव:</strong> श्री अघोर रुद्र (अशरीरी रूप) <br>
-                    <strong>तान्त्रिक मूल मंत्र:</strong> ॐ धूं धूं धूमावत्यै फट्॥
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-3d-frame"><img src="1000411653.jpg" alt="बगलामुखी मंदिर नलखेड़ा माँ बगलामुखी"></div>
-                <div class="mahavidya-name">८. माँ बगलामुखी (पीताम्बरा)</div>
-                <div class="mahavidya-desc">सर्वशक्तिशाली स्तंभन शक्ति। दुष्टों की वाणी, गति और बुद्धि का कीलन कर मुकदमों व राजनीति में विजय देती हैं।</div>
-                <div class="bhairav-trigger" onclick="toggleBhairav('b8')">👁️ भैरव स्वरूप एवं गुप्त मंत्र जानें</div>
-                <div id="b8" class="bhairav-details">
-                    <strong>सम्बन्धित महाभैरव:</strong> श्री एकवक्त्र महारुद्र भैरव <br>
-                    <strong>तान्त्रिक मूल मंत्र:</strong> ॐ ह्लीं बगलामुखी सर्वदुष्टानां वाचं मुखं पदं स्तम्भय जिह्व्हा कीलय बुद्धिं विनाशय ह्लीं ॐ स्वाहा॥
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-3d-frame"><img src="1000411654.jpg" alt="बगलामुखी मंदिर नलखेड़ा माँ मातंगी"></div>
-                <div class="mahavidya-name">९. माँ मातंगी</div>
-                <div class="mahavidya-desc">ज्ञान, ललित कला, सुरीली वाणी, वशीकरण और सुखी गृहस्थ दाम्पत्य जीवन की तांत्रिक देवी।</div>
-                <div class="bhairav-trigger" onclick="toggleBhairav('b9')">👁️ भैरव स्वरूप एवं गुप्त मंत्र जानें</div>
-                <div id="b9" class="bhairav-details">
-                    <strong>सम्बन्धित महाभैरव:</strong> श्री मतंग भैरव <br>
-                    <strong>तान्त्रिक मूल मंत्र:</strong> ॐ ह्रीं क्लीं हूँ मातंग्यै फट् स्वाहा॥
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-3d-frame"><img src="1000411656.jpg" alt="बगलामुखी मंदिर नलखेड़ा माँ कमला"></div>
-                <div class="mahavidya-name">१०. माँ कमला</div>
-                <div class="mahavidya-desc">दस महाविद्याओं का अंतिम पूर्ण वैभवशाली स्वरूप, जो साधक को कुबेर के समान अखंड धन-संपदा प्रदान करता है।</div>
-                <div class="bhairav-trigger" onclick="toggleBhairav('b10')">👁️ भैरव स्वरूप एवं गुप्त मंत्र जानें</div>
-                <div id="b10" class="bhairav-details">
-                    <strong>सम्बन्धित महाभैरव:</strong> श्री सदाशिव भैरव (विष्णु रूप) <br>
-                    <strong>तान्त्रिक मूल मंत्र:</strong> ॐ श्रीं ह्रीं श्रीं कमले कमलालये प्रसीद प्रसीद श्रीं ह्रीं श्रीं ॐ महालक्ष्म्यै नमः॥
-                </div>
-            </div>
-
         </div>
 
         <h2>📖 श्री बगलामुखी मंत्र एवं मूल चालीसा पाठ</h2>
@@ -695,12 +842,12 @@
                 <input type="text" id="bhaktGotra" placeholder="अपना गोत्र लिखें">
             </div>
             <div class="form-group">
-                <label>विशेष तांत्रिक अनुष्ठान का चयन करें:</label>
-                <select id="pujaType">
-                    <option value="विशेष राजनीति विजय, चुनाव जीत एवं पद प्राप्ति यज्ञ">विशेष राजनीति विजय, चुनाव जीत एवं पद प्राप्ति यज्ञ</option>
-                    <option value="विशेष शत्रु बाधा निवारण (क्रूर मिर्ची हवन)">विशेष शत्रु बाधा निवारण (क्रूर मिर्ची हवन)</option>
-                    <option value="न्यायालय (कोर्ट-के-स/मुकदमा) विजय अनुष्ठान">न्यायालय (कोर्ट-केस/मुकदमा) विजय अनुष्ठान</option>
-                    <option value="व्यापार स्तंभन दोष मुक्ति एवं महालक्ष्मी पूजन">व्यापार स्तंभन दोष मुक्ति एवं महालक्ष्मी पूजन</option>
+                <label>विशेष तांत्रिक अनुष्ठान का चयन करें (निर्धारित दक्षिणा सहित):</label>
+                <select id="pujaType" onchange="updatePrice()">
+                    <option value="विशेष राजनीति विजय, चुनाव जीत एवं पद प्राप्ति यज्ञ" data-price="21000">विशेष राजनीति विजय, चुनाव जीत एवं पद प्राप्ति यज्ञ (दक्षिणा: ₹21,000)</option>
+                    <option value="विशेष शत्रु बाधा निवारण (क्रूर मिर्ची हवन)" data-price="11000">विशेष शत्रु बाधा निवारण (क्रूर मिर्ची हवन) (दक्षिणा: ₹11,000)</option>
+                    <option value="न्यायालय (कोर्ट-के-स/मुकदमा) विजय अनुष्ठान" data-price="7100">न्यायालय (कोर्ट-केस/मुकदमा) विजय अनुष्ठान (दक्षिणा: ₹7,100)</option>
+                    <option value="व्यापार स्तंभन दोष मुक्ति एवं महालक्ष्मी पूजन" data-price="5100">व्यापार स्तंभन दोष मुक्ति एवं महालक्ष्मी पूजन (दक्षिणा: ₹5,100)</option>
                 </select>
             </div>
             <button class="submit-btn" onclick="generateReceipt()">🔱 अनुष्ठान संकल्प करें</button>
@@ -712,7 +859,12 @@
                     <p style="margin:6px 0; font-size:14px;"><strong>प्रधान यजमान:</strong> <span id="rName"></span></p>
                     <p style="margin:6px 0; font-size:14px;"><strong>गोत्र संकल्प:</strong> <span id="rGotra"></span></p>
                     <p style="margin:6px 0; font-size:14px;"><strong>अनुष्ठान का नाम:</strong> <span id="rPuja"></span></p>
-                    <p style="margin:12px 0 6px 0; font-size:14px; color:#27ae60; font-weight:bold; text-align:center; background:#e8f8f0; padding:5px; border-radius:4px;">✓ डिजिटल संकल्प रसीद स्वीकृत। स्क्रीनशॉट लेकर व्हाट्सएप करें।</p>
+                    <p style="margin:6px 0; font-size:14px;"><strong>नियत अनुष्ठान दक्षिणा:</strong> <span id="rPrice" style="color:#27ae60; font-weight:700;"></span></p>
+                    <p style="margin:6px 0; font-size:14px;"><strong>भुगतान स्थिति:</strong> <span id="payStatus" style="color:#ff6a00; font-weight:bold;">पेंडिंग (दक्षिणा जमा करें)</span></p>
+                    
+                    <button class="pay-now-btn" onclick="openPaymentGateway()">💳 ऑनलाइन दक्षिणा भुगतान करें (सुरक्षित पेमेंट)</button>
+                    
+                    <p style="margin:12px 0 6px 0; font-size:13px; color:#555; text-align:center; background:#fff2cc; padding:6px; border-radius:4px; border:1px solid #ffe599;">✓ रसीद जेनरेट हो गई है। कृपया नीचे दी गई बटन से ऑनलाइन दक्षिणा जमा कर स्क्रीनशॉट व्हाट्सएप करें।</p>
                 </div>
                 <div style="font-size:11px; text-align:center; color:#666; border-top:1px solid #ddd; padding-top:6px;">आचार्य पंडित अभिषेक शर्मा - नलखेड़ा सिद्धपीठ (म.प्र.)</div>
             </div>
@@ -726,6 +878,40 @@
             </div>
         </div>
 
+    </div>
+
+    <div id="paymentModal" class="payment-modal">
+        <div class="payment-card">
+            <div class="pay-header">🔒 पीताम्बरा पीठ सिक्योर पेमेंट गेटवे</div>
+            <div class="pay-body">
+                <p style="margin:0 0 10px 0; font-size:14px; color:#666;">अनुष्ठान हेतु संकल्पित कुल दक्षिणा राशि:</p>
+                <div class="pay-amount-box" id="modalPrice">₹0</div>
+                
+                <p style="font-size:13px; color:#555; text-align:left; margin-bottom:10px;"><strong>यजमान का नाम:</strong> <span id="modalUser"></span></p>
+                
+                <div class="payment-methods">
+                    <div class="pay-option" onclick="processPayment('PhonePe')">
+                        <span>📲 PhonePe / Google Pay / Paytm (UPI)</span>
+                        <span style="color:#27ae60;">➔</span>
+                    </div>
+                    <div class="pay-option" onclick="processPayment('QR')">
+                        <span>🔲 QR Code द्वारा भुगतान</span>
+                        <span style="color:#27ae60;">➔</span>
+                    </div>
+                    <div class="pay-option" onclick="processPayment('Card')">
+                        <span>💳 क्रेडिट / डेबिट कार्ड</span>
+                        <span style="color:#bbb;">➔</span>
+                    </div>
+                    <div class="pay-option" onclick="processPayment('Netbanking')">
+                        <span>🏛️ नेट बैंकिंग (SBI, HDFC, ICICI)</span>
+                        <span style="color:#bbb;">➔</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pay-footer">
+                <button class="close-pay-btn" onclick="closePaymentGateway()">बंद करें (Cancel)</button>
+            </div>
+        </div>
     </div>
 
     <a href="https://wa.me/919352836546?text=जय%20माँ%20बगलामुखी,%20पंडित%20जी%20हमें%20चुनाव%20विजय%20और%20राजनीति%20स्तंभन%20अनुष्ठान%20की%20दक्षिणा%20और%20विधि%20जाननी%20है।" class="whatsapp-float" target="_blank" title="व्हाट्सएप पर तुरंत संपर्क करें">
@@ -770,11 +956,17 @@
             }
         }
 
+        function updatePrice() {
+            // Placeholder for selection change handlers if needed
+        }
+
         // Live Digital Token System
         function generateReceipt() {
             const name = document.getElementById("bhaktName").value;
             const gotra = document.getElementById("bhaktGotra").value || "कश्यप (सामान्य)";
-            const puja = document.getElementById("pujaType").value;
+            const pujaSelect = document.getElementById("pujaType");
+            const puja = pujaSelect.value;
+            const price = pujaSelect.options[pujaSelect.selectedIndex].getAttribute('data-price');
 
             if(!name.trim()) {
                 alert("कृपया यजमान का नाम अवश्य लिखें ताकि संकल्प किया जा सके!");
@@ -785,10 +977,52 @@
             document.getElementById("rName").innerText = name;
             document.getElementById("rGotra").innerText = gotra;
             document.getElementById("rPuja").innerText = puja;
+            document.getElementById("rPrice").innerText = "₹" + parseInt(price).toLocaleString('en-IN');
             
+            // Set values for payment context
+            document.getElementById("modalPrice").innerText = "₹" + parseInt(price).toLocaleString('en-IN');
+            document.getElementById("modalUser").innerText = name + " (गोत्र: " + gotra + ")";
+            
+            // Reset state
+            document.getElementById("payStatus").innerText = "पेंडिंग (दक्षिणा जमा करें)";
+            document.getElementById("payStatus").style.color = "#ff6a00";
+
             const receipt = document.getElementById("digitalReceipt");
             receipt.style.display = "block";
             receipt.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Payment Gateway Logic Control
+        function openPaymentGateway() {
+            document.getElementById("paymentModal").style.display = "flex";
+        }
+
+        function closePaymentGateway() {
+            document.getElementById("paymentModal").style.display = "none";
+        }
+
+        function processPayment(method) {
+            const pujaSelect = document.getElementById("pujaType");
+            const price = pujaSelect.options[pujaSelect.selectedIndex].getAttribute('data-price');
+            const name = document.getElementById("bhaktName").value;
+            
+            const upiId = "9352836546@upi"; 
+            const merchantName = "Pandit Abhishek Sharma Nalkheda";
+            const transactionNote = encodeURIComponent("Anushthan Booking for " + name);
+            
+            if(method === 'PhonePe' || method === 'QR') {
+                const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(merchantName)}&am=${price}&cu=INR&tn=${transactionNote}`;
+                window.location.href = upiUrl;
+                
+                setTimeout(function(){
+                    document.getElementById("paymentModal").style.display = "none";
+                    document.getElementById("payStatus").innerText = "✓ भुगतान प्रक्रिया शुरू की गई (कृपया स्क्रीनशॉट व्हाट्सएप करें)";
+                    document.getElementById("payStatus").style.color = "#27ae60";
+                    alert("भुगतान पूरा होने के बाद कृपया पेमेंट का स्क्रीनशॉट व्हाट्सएप नंबर 9352836546 पर अवश्य भेजें ताकि आपकी पूजा की सामग्री नलखेड़ा मंदिर में सुनिश्चित की जा सके।");
+                }, 1500);
+            } else {
+                alert("यह भुगतान माध्यम जल्द ही चालू किया जा रहा है। कृपया सबसे सुरक्षित और आसान माध्यम 'PhonePe / Google Pay / Paytm (UPI)' का उपयोग करें।");
+            }
         }
     </script>
 </body>
