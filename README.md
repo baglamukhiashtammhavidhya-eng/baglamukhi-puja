@@ -1,386 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddh Peeth Maa Baglamukhi Darshan & Royal Events Nalkheda</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=600;800&family=Yatra+One&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #ffcc00;
+            --dark-gold: #ff9900;
+            --deep-bg: #0d0d0d;
+            --card-bg: #161616;
+            --border-color: #2d2d2d;
+            --text-light: #f5f5f5;
+            --text-muted: #aaaaaa;
         }
 
-        .mahavidya-info {
-            padding: 20px;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .mahavidya-info h3 {
-            color: var(--gold-solid);
-            font-size: 1.4rem;
-            margin-bottom: 5px;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--deep-bg);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+            perspective: 1000px;
         }
 
-        .mahavidya-info .bhairav {
-            color: #ff3300;
+        /* Ambient Gold Background Radial Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.03) 0%, rgba(0,0,0,0) 70%);
+            z-index: -1;
+            animation: rotateBg 40s linear infinite;
+        }
+
+        @keyframes rotateBg {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .top-bar {
+            background-color: #000;
+            color: var(--primary-gold);
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
             font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            letter-spacing: 1px;
         }
 
-        .mahavidya-info p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            text-align: justify;
+        header {
+            background-color: rgba(22, 22, 22, 0.9);
+            border-bottom: 2px solid var(--primary-gold);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
-        /* Booking Form & UPI Section */
-        .booking-section {
-            background: linear-gradient(145deg, #2d0004, #0a0001);
-            border: 2px solid var(--gold-solid);
-            border-radius: 20px;
-            padding: 40px 25px;
-            margin: 50px 0;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-        }
-
-        .booking-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            align-items: center;
-        }
-
-        .booking-form form {
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
             gap: 15px;
         }
 
-        .form-group label {
-            display: block;
-            color: var(--gold-solid);
-            margin-bottom: 5px;
+        .logo-section h1 {
+            font-family: 'Yatra One', serif;
+            color: var(--primary-gold);
+            font-size: 26px;
+        }
+
+        .logo-section p {
+            font-size: 12px;
+            color: var(--dark-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
             font-weight: 600;
         }
 
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid rgba(243, 156, 18, 0.4);
-            background: rgba(0,0,0,0.5);
-            color: #fff;
-            font-size: 1rem;
+        /* 3D Translation Toggle Button */
+        .lang-toggle-btn {
+            background: #222;
+            color: var(--primary-gold);
+            border: 1px solid var(--primary-gold);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-
-        .payment-info {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 30px 20px;
-            border-radius: 12px;
-            border: 1px dashed var(--gold-solid);
-        }
-
-        .upi-id {
-            background: var(--accent-red);
-            color: #fff;
-            padding: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 6px;
-            margin: 15px 0;
-            display: inline-block;
-            letter-spacing: 0.5px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Social Media Icons */
-        .social-container {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid var(--gold-solid);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold-solid);
-            font-size: 1.4rem;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .social-icon:hover {
-            background: var(--gold-solid);
+        .lang-toggle-btn:hover {
+            background: var(--primary-gold);
             color: #000;
-            transform: scale(1.1);
         }
 
-        /* Action Buttons */
-        .btn-submit {
-            background: var(--gold-gradient);
+        .btn-3d-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 0 0 1px #128c7e inset,
+                        0 4px 0 0 #0b5e53,
+                        0 8px 15px 0 rgba(0,0,0,0.5);
+            transition: all 0.1s ease;
+            transform: translateY(0);
+        }
+
+        .btn-3d-wa:hover {
+            background: linear-gradient(135deg, #2ae871, #14a393);
+            transform: translateY(2px);
+            box-shadow: 0 0 0 1px #14a393 inset,
+                        0 2px 0 0 #0b5e53,
+                        0 4px 10px 0 rgba(0,0,0,0.5);
+        }
+
+        .btn-3d-wa:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 0 1px #14a393 inset,
+                        0 0 0 0 #0b5e53,
+                        0 2px 5px 0 rgba(0,0,0,0.5);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(13, 13, 13, 0.75), rgba(13, 13, 13, 1)), 
+                        url('https://images.unsplash.com/photo-1609137144813-7d68cd15bc52?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 45px;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            text-shadow: 0 10px 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 204, 0, 0.3);
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto 35px auto;
+            font-size: 18px;
+            color: #ddd;
+        }
+
+        .badge-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .hero-badge {
+            background: rgba(255, 204, 0, 0.05);
+            border: 1px solid rgba(255, 204, 0, 0.3);
+            backdrop-filter: blur(5px);
+            color: var(--primary-gold);
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-3d-gold {
+            display: inline-block;
+            padding: 16px 40px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #000;
+            background: linear-gradient(135deg, var(--primary-gold), var(--dark-gold));
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 0 0 1px var(--dark-gold) inset,
+                        0 5px 0 0 #b38600,
+                        0 10px 20px 0 rgba(0,0,0,0.6);
+            transform: translateY(0);
+            transition: all 0.1s ease;
+        }
+
+        .btn-3d-gold:hover {
+            background: linear-gradient(135deg, #ffe066, var(--primary-gold));
+            transform: translateY(2px);
+            box-shadow: 0 0 0 1px var(--dark-gold) inset,
+                        0 3px 0 0 #b38600,
+                        0 6px 12px 0 rgba(0,0,0,0.5);
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .main-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.6);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 15px 20px 40px rgba(0,0,0,0.8);
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-gold);
+            font-size: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--dark-gold);
+            padding-left: 15px;
+        }
+
+        .sub-heading {
+            color: var(--dark-gold);
+            font-size: 19px;
+            margin: 30px 0 15px 0;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #ccc;
+            font-size: 15px;
+        }
+
+        .highlight {
+            color: var(--primary-gold);
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .feature-list li::before {
+            content: "🔱";
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-size: 16px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin-top: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            background-color: #101010;
+        }
+
+        .custom-table th {
+            background-color: #1a1a1a;
+            color: var(--primary-gold);
+            padding: 18px;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            border-bottom: 2px solid var(--dark-gold);
+        }
+
+        .custom-table td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14.5px;
+        }
+
+        .sidebar-card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--dark-gold);
+            border-radius: 16px;
+            padding: 30px;
+            position: sticky;
+            top: 120px;
+            box-shadow: 0 15px 35px rgba(255, 153, 0, 0.08), 10px 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .form-title {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-gold);
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .form-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            margin-bottom: 22px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            color: var(--primary-gold);
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px;
+            background-color: #0b0b0b;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+
+        .btn-3d-submit {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--dark-gold), var(--primary-gold));
             color: #000;
             border: none;
-            padding: 14px;
-            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 8px;
             cursor: pointer;
-            width: 100%;
-            transition: 0.3s;
-            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 0 0 #b38600, 0 8px 15px rgba(0,0,0,0.4);
+            transition: all 0.1s ease;
         }
 
-        .btn-submit:hover {
-            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+        .btn-3d-submit:hover {
+            background: linear-gradient(135deg, #ffb326, #ffcc00);
+            transform: translateY(1px);
+            box-shadow: 0 3px 0 0 #b38600, 0 5px 10px rgba(0,0,0,0.4);
         }
 
-        /* Sticky Footer for Mobile */
-        .mobile-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #0f0001;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            z-index: 99999;
-            border-top: 3px solid var(--gold-solid);
-        }
-
-        .m-bar-btn {
-            text-align: center;
+        .location-box {
+            margin-top: 30px;
+            background-color: #0a0a0a;
             padding: 18px;
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.15rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
-
-        .m-call { background: var(--accent-red); }
-        .m-wp { background: #25D366; }
 
         footer {
+            background-color: #050505;
+            padding: 50px 20px;
             text-align: center;
-            padding: 40px 20px;
-            background: #030000;
-            color: #666;
-            border-top: 1px solid rgba(255,255,255,0.03);
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 14px;
         }
 
-        @media (max-width: 768px) {
-            header h1 { font-size: 2.2rem; }
-            .main-title { font-size: 1.9rem; }
-        }
+        /* Language Visibility Engine */
+        .lang-en { display: block; }
+        .lang-hi { display: none; }
+
+        body.hindi-mode .lang-en { display: none; }
+        body.hindi-mode .lang-hi { display: block; }
+        
+        /* Table Dynamic Switch Overrides */
+        tr.lang-en { display: table-row; }
+        tr.lang-hi { display: none; }
+        body.hindi-mode tr.lang-en { display: none; }
+        body.hindi-mode tr.lang-hi { display: table-row; }
     </style>
 </head>
 <body>
 
-    <div class="live-banner">
-        🚩 सिद्धपीठ नलखेड़ा में दस महाविद्या एवं माँ बगलामुखी अनुष्ठान हेतु गोत्र संकल्प चालू है।
+    <div class="top-bar">
+        <span class="lang-en">💥 SIDDH PEETH MAA BAGLAMUKHI ANUSHTHAN & ROYAL EVENT MANAGEMENT NALKHERA 💥</span>
+        <span class="lang-hi">💥 सिद्ध पीठ माँ बगलामुखी अनुष्ठान एवं रॉयल इवेंट मैनेजमेंट नलखेड़ा 💥</span>
     </div>
 
     <header>
-        <div class="royal-badge">🔱 स्वयंभू त्रिशक्ति सिद्धपीठ केंद्र 🔱</div>
-        <h1>मां बगलामुखी अनुष्ठान केंद्र</h1>
-        <p style="font-size: 1.4rem; margin-bottom: 10px;">नलखेड़ा, आगर मालवा (मध्य प्रदेश)</p>
-        <div>
-            <span class="pandit-profile">आचार्य पंडित अभिषेक शर्मा जी</span>
+        <div class="header-container">
+            <div class="logo-section">
+                <h1 class="lang-en">Maa Baglamukhi Darshan</h1>
+                <h1 class="lang-hi">माँ बगलामुखी दर्शन</h1>
+                <p>Nalkheda, Madhya Pradesh</p>
+            </div>
+            
+            <!-- Dynamic Translation Toggle Button -->
+            <button class="lang-toggle-btn" onclick="toggleLanguage()">🌐 Translate to Hindi / English</button>
+
+            <a href="https://wa.me/919352836546" target="_blank" class="btn-3d-wa">
+                <span class="lang-en">💬 Connect on WhatsApp</span>
+                <span class="lang-hi">💬 व्हाट्सएप पर संपर्क करें</span>
+            </a>
         </div>
     </header>
 
-    <div class="container">
+    <div class="hero">
+        <h2 class="lang-en">Maa Baglamukhi Protection & Das Mahavidya Portal</h2>
+        <h2 class="lang-hi">माँ बगलामुखी सुरक्षा एवं दस महाविद्या पोर्टल</h2>
         
-        <h2 class="main-title">शक्ति की दस सर्वोच्च सत्ता: दस महाविद्या एवं उनके भैरव</h2>
-        <p style="text-align: center; max-width: 900px; margin: 0 auto 30px auto; color: var(--text-muted);">
-            शैव और शाक्त तंत्र में दस महाविद्याओं की साधना ही समस्त सिद्धियों का मूल है। प्रत्येक महाविद्या का एक विशिष्ट स्वरूप है और उनके साथ उनके रक्षक महादेव स्वरूप भैरव सदैव जाग्रत रहते हैं। इनकी शरण में आने वाला यजमान तीनों लोकों के संकटों से मुक्त हो जाता है।
-        </p>
-
-        <div class="mahavidya-grid">
-            
-            <div class="mahavidya-card">
-                <div class="mahavidya-img"><i class="fa-solid fa-om"></i><br>माँ काली<br>[3D Divya Image]</div>
-                <div class="mahavidya-info">
-                    <h3>1. माँ महाकाली</h3>
-                    <div class="bhairav">सम्बद्ध भैरव: महाकाल भैरव</div>
-                    <p>काल का ग्रास करने वाली सर्वशक्तिशाली देवी। तंत्र बाधा नाश, अकाल मृत्यु से सुरक्षा एवं तीव्र शत्रु शमन हेतु माँ महाकाली की आराधना की जाती है।</p>
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-img"><i class="fa-solid fa-om"></i><br>माँ तारा<br>[3D Divya Image]</div>
-                <div class="mahavidya-info">
-                    <h3>2. माँ तारा</h3>
-                    <div class="bhairav">सम्बद्ध भैरव: अक्षोभ्य भैरव</div>
-                    <p>घोर संकटों से तारने वाली महाविद्या। आर्थिक संकट निवारण, मोक्ष प्राप्ति एवं महावाक् सिद्धि हेतु नीलसरस्वती स्वरूप माँ तारा की पूजा अचूक है।</p>
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-img"><i class="fa-solid fa-om"></i><br>माँ त्रिपुर सुंदरी<br>[3D Divya Image]</div>
-                <div class="mahavidya-info">
-                    <h3>3. माँ त्रिपुर सुंदरी (ललिता)</h3>
-                    <div class="bhairav">सम्बद्ध भैरव: पंचवक्त्र भैरव</div>
-                    <p>तीनों लोकों में परम सुंदरी और षोडशी रूप। राजयोग प्राप्ति, अखंड ऐश्वर्य, मान-सम्मान एवं चक्रवर्ती सुखों के लिए श्रीविद्या साधना की जाती है।</p>
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-img"><i class="fa-solid fa-om"></i><br>माँ भुवनेश्वरी<br>[3D Divya Image]</div>
-                <div class="mahavidya-info">
-                    <h3>4. माँ भुवनेश्वरी</h3>
-                    <div class="bhairav">सम्बद्ध भैरव: त्र्यंबक भैरव</div>
-                    <p>समस्त ब्रह्मांड की स्वामिनी। भूमि-भवन लाभ, संपत्ति वृद्धि, और समाज में उच्च नेतृत्व क्षमता (वर्चस्व) स्थापित करने के लिए इनकी कृपा अनिवार्य है।</p>
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-img"><i class="fa-solid fa-om"></i><br>माँ त्रिपुर भैरवी<br>[3D Divya Image]</div>
-                <div class="mahavidya-info">
-                    <h3>5. माँ त्रिपुर भैरवी</h3>
-                    <div class="bhairav">सम्बद्ध भैरव: दक्षिणामूर्ति भैरव</div>
-                    <p>प्रचंड तेज और विनाशकारी शक्तियों का स्तंभन करने वाली। मानसिक भय, प्रेत बाधा, और असाध्य भय के समूल नाश हेतु देवी भैरवी काल स्वरूप हैं।</p>
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-img"><i class="fa-solid fa-om"></i><br>माँ छिन्नमस्ता<br>[3D Divya Image]</div>
-                <div class="mahavidya-info">
-                    <h3>6. माँ छिन्नमस्ता</h3>
-                    <div class="bhairav">सम्बद्ध भैरव: कबंध भैरव</div>
-                    <p>महान तांत्रिक एवं गुप्त सिद्धियों की अधिष्ठात्री देवी। कुंडली जाग्रति, शत्रुओं की गुप्त चालों को विफल करने और आकस्मिक विजय हेतु पूजनीय।</p>
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-img"><i class="fa-solid fa-om"></i><br>माँ धूमावती<br>[3D Divya Image]</div>
-                <div class="mahavidya-info">
-                    <h3>7. माँ धूमावती</h3>
-                    <div class="bhairav">सम्बद्ध भैरव: (अघोर रूप - स्वतंत्र)</div>
-                    <p>अभाव, संकट और शत्रुओं को दरिद्र बनाने वाली उग्र शक्ति। सभी प्रकार के तंत्र प्रयोगों को उलट देने और कोर्ट केसों में विपक्ष को परास्त करने के लिए विख्यात।</p>
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-img"><i class="fa-solid fa-om"></i><br>माँ बगलामुखी<br>[3D Divya Image]</div>
-                <div class="mahavidya-info">
-                    <h3>8. माँ बगलामुखी (पीताम्बरा)</h3>
-                    <div class="bhairav">सम्बद्ध भैरव: एकवक्त्र महारुद्र</div>
-                    <p>वाणी, बुद्धि और क्रिया का स्तम्भन करने वाली ब्रह्मास्त्र विद्या। राजनीति में निश्चित विजय, चुनाव फतह, और प्रबलतम विरोधियों के दमन की सर्वोच्च देवी।</p>
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-img"><i class="fa-solid fa-om"></i><br>माँ मातंगी<br>[3D Divya Image]</div>
-                <div class="mahavidya-info">
-                    <h3>9. माँ मातंगी</h3>
-                    <div class="bhairav">सम्बद्ध भैरव: मतंग भैरव</div>
-                    <p>तांत्रिक सरस्वती का स्वरूप। कला, संगीत, वाक-चातुर्य, और गृहस्थ जीवन में आकर्षण व प्रेम की अखंड प्राप्ति के लिए देवी मातंगी की साधना की जाती है।</p>
-                </div>
-            </div>
-
-            <div class="mahavidya-card">
-                <div class="mahavidya-img"><i class="fa-solid fa-om"></i><br>माँ कमला<br>[3D Divya Image]</div>
-                <div class="mahavidya-info">
-                    <h3>10. माँ कमला</h3>
-                    <div class="bhairav">सम्बद्ध भैरव: सदाशिव रूप</div>
-                    <p>पूर्ण वैभव और धन-धान्य की अधिष्ठात्री तांत्रिक लक्ष्मी। व्यापार में निरंतर उन्नति, अक्षय धन भंडार और ऋण मुक्ति हेतु अंतिम महाविद्या फलदाई हैं।</p>
-                </div>
-            </div>
-
+        <p class="lang-en">Direct Havan booking, Shatru Stambhan Kavach, Das Mahavidya, and their Bhairav's ancient knowledge directly from the historic tantra peeth of Nalkheda.</p>
+        <p class="lang-hi">नलखेड़ा के ऐतिहासिक तंत्र पीठ से सीधे हवन बुकिंग, शत्रु स्तम्भन कवच, दस महाविद्या और उनके भैरव की संपूर्ण प्राचीन जानकारी।</p>
+        
+        <div class="badge-grid">
+            <div class="hero-badge">🛡️ Baglamukhi Protection</div>
+            <div class="hero-badge">🔥 Original Havan Booking</div>
+            <div class="hero-badge">🔱 10 Mahavidya Directory</div>
+            <div class="hero-badge">👑 Royal Turban & Event Tying</div>
         </div>
 
-        <h2 class="main-title">ऑनलाइन अनुष्ठान / हवन बुकिंग केंद्र</h2>
-        <div class="booking-section">
-            <div class="booking-grid">
-                
-                <div class="booking-form">
-                    <h3 style="color: var(--gold-solid); margin-bottom: 20px;"><i class="fa-solid fa-feather-pointed"></i> अपना संकल्प दर्ज करें</h3>
-                    <form onsubmit="redirectToWhatsApp(event)">
-                        <div class="form-group">
-                            <label>यजमान का पूरा नाम</label>
-                            <input type="text" id="y-name" placeholder="अपना नाम दर्ज करें" required>
-                        </div>
-                        <div class="form-group">
-                            <label>मोबाइल नंबर (WhatsApp Number)</label>
-                            <input type="tel" id="y-phone" placeholder="अपना मोबाइल नंबर" required>
-                        </div>
-                        <div class="form-group">
-                            <label>अनुष्ठान का प्रकार चुनें</label>
-                            <select id="pujan-type">
-                                <option value="लघु संकट निवारण यज्ञ (₹5,100)">लघु संकट निवारण यज्ञ (₹5,100)</option>
-                                <option value="शत्रु दमन व कोर्ट केस विजय (₹11,000)">शत्रु दमन व कोर्ट केस विजय (₹11,000)</option>
-                                <option value="राजयोग व राजनीति विजय (₹21,000)">राजयोग व राजनीति विजय (₹21,000)</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn-submit">🔱 गोत्र संकल्प सुरक्षित करें</button>
-                    </form>
-                </div>
-
-                <div class="payment-info">
-                    <h3 style="color: var(--gold-solid);"><i class="fa-solid fa-qrcode"></i> सीधी सुरक्षित दक्षिणा जमा</h3>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 10px;">बुकिंग फॉर्म भरने के बाद अनुष्ठान की नियत दक्षिणा सीधे इस आधिकारिक UPI ID पर ट्रांसफर करें:</p>
-                    <div class="upi-id">9352836546-3@ybl</div>
-                    <p style="font-size: 0.85rem; color: #ff3300; font-weight: bold;"><i class="fa-solid fa-triangle-exclamation"></i> भुगतान करने के बाद स्क्रीनशॉट पंडित जी को व्हाट्सएप पर अवश्य भेजें।</p>
-                    
-                    <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px;">
-                        <a href="upi://pay?pa=9352836546-3@ybl&pn=Abhishek%20Sharma&cu=INR" style="background:#2d0004; border:1px solid var(--gold-solid); color:#fff; padding:8px 15px; text-decoration:none; border-radius:5px; font-size:0.9rem; font-weight:bold;">Pay via UPI App</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="social-container">
-            <h3 style="color: var(--gold-solid);"><i class="fa-solid fa-share-nodes"></i> हमारे आधिकारिक सोशल मीडिया अकाउंट्स</h3>
-            <div class="social-links">
-                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="https://youtube.com" target="_blank" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://wa.me/919352836546" target="_blank" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
-        </div>
-
+        <a href="https://wa.me/919352836546" target="_blank" class="btn-3d-gold">
+            <span class="lang-en">Free Consultation & Booking</span>
+            <span class="lang-hi">मुफ्त परामर्श एवं बुकिंग</span>
+        </a>
     </div>
 
-    <div class="mobile-bar">
-        <a href="tel:+919352836546" class="m-bar-btn m-call">
-            <i class="fa-solid fa-phone-volume"></i> कॉल परामर्श
-        </a>
-        <a href="https://wa.me/919352836546?text=प्रणाम पंडित जी, मुझे माँ बगलामुखी अनुष्ठान केंद्र नलखेड़ा में पूजन बुकिंग हेतु चर्चा करनी है।" target="_blank" class="m-bar-btn m-wp">
-            <i class="fa-brands fa-whatsapp"></i> व्हाट्सएप चैट
-        </a>
+    <div class="main-wrapper">
+        <main>
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span class="lang-en">Maa Baglamukhi Siddh Peeth (Nalkheda)</span>
+                    <span class="lang-hi">माँ बगलामुखी सिद्ध पीठ (नलखेड़ा)</span>
+                </h2>
+                
+                <div class="lang-en">
+                    <p>Located on the holy banks of Lakhunder River in the <span class="highlight">Agar Malwa</span> district of Madhya Pradesh, the <strong>Siddh Peeth Maa Baglamukhi Temple</strong> is world-famous for tantra sadhana and removal of enemy obstacles. This temple dates back to the Mahabharata era, where Yudhishthir himself performed tantra poojan under Lord Krishna's guidance.</p>
+                </div>
+                <div class="lang-hi">
+                    <p>मध्य प्रदेश के <span class="highlight">आगर मालवा</span> जिले में, लखूंदर नदी के परम पावन तट पर स्थित <strong>सिद्ध पीठ माँ बगलामुखी मंदिर</strong> विश्व भर में तंत्र साधना और शत्रु बाधा मुक्ति के लिए प्रसिद्ध है। यह मंदिर महाभारत कालीन है, जहां स्वयं युधिष्ठिर ने भगवान कृष्ण के निर्देश पर तंत्र पूजन किया था।</p>
+                </div>
+                
+                <h3 class="sub-heading">
+                    <span class="lang-en">🛡️ Protection & Havan Services Features:</span>
+                    <span class="lang-hi">🛡️ सुरक्षा एवं हवन सेवा की विशेषताएं:</span>
+                </h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="lang-en"><span class="highlight">Shatru Stambhan Anushthan:</span> Maa Baglamukhi (Pitambara) freezes the speech, intellect, and conspiracies of enemies.</span>
+                        <span class="lang-hi"><span class="highlight">शत्रु स्तम्भन अनुष्ठान:</span> माँ बगलामुखी (पीताम्बरा) शत्रुओं की बोली, बुद्धि और दुष्प्रपंच को स्तम्भित ( freeze) कर देती हैं।</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><span class="highlight">Legal & Court Case Relief:</span> Special Pitambara Havan management for victory in court cases and disputes.</span>
+                        <span class="lang-hi"><span class="highlight">कानूनी और कोर्ट केस राहत:</span> कोर्ट कचहरी और वाद-विवाद में सफलता के लिए विशेष पीताम्बरा हवन प्रबंधन।</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><span class="highlight">Nalkheda Havan Kund Slots:</span> Basic slots on the physical havan kund are reserved on the official temple portal with a receipt, and we guide you with cultural management for the remaining special rituals.</span>
+                        <span class="lang-hi"><span class="highlight">नलखेड़ा हवन कुंड स्लॉट:</span> आधिकारिक मंदिर पोर्टल पर भौतिक हवन कुंड का बेसिक स्लॉट रसीद के साथ रिजर्व किया जाता है, और बाकी की विशेष सामग्री एवं विधि-विधान प्रबंधन हम गाइड करते हैं।</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><span class="highlight">Remote Sankalp Puja:</span> For devotees unable to visit Nalkheda, pure tantrik rituals are performed using their Name and Gotra, and Prasad is dispatched.</span>
+                        <span class="lang-hi"><span class="highlight">रिमोट संकल्प पूजा:</span> जो भक्त नलखेड़ा आने में असमर्थ हैं, उनके नाम और गोत्र के साथ शुद्ध तांत्रिक विधि से पूजा संपन्न करवाकर प्रसाद भेजा जाता है।</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span class="lang-en">Das Mahavidya and Their Bhairav Forms</span>
+                    <span class="lang-hi">दस महाविद्या और उनके भैरव स्वरूप</span>
+                </h2>
+                <p class="lang-en">In the Sanatan Shakti tradition, the Ten Mahavidyas are the supreme powers of the universe. Each Mahavidya is accompanied by a protective and connecting **Bhairav Baba**, without whose permission tantra sadhana is considered incomplete. Detailed information is provided below:</p>
+                <p class="lang-hi">सनातन शक्ति परंपरा में दस महाविद्याएं ही ब्रह्मांड की सर्वोच्च शक्तियां हैं। प्रत्येक महाविद्या के साथ उनके एक रक्षक और संयोजक **भैरव बाबा** होते हैं, जिनकी आज्ञा के बिना तंत्र साधना अधूरी मानी जाती है। नीचे इसकी संपूर्ण जानकारी दी गई है:</p>
+                
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr class="lang-en">
+                                <th>S.No.</th>
+                                <th>Mahavidya Form</th>
+                                <th>Sadhana / Blessing Benefits</th>
+                                <th>Their Bhairav Baba</th>
+                            </tr>
+                            <tr class="lang-hi">
+                                <th>क्रम</th>
+                                <th>महाविद्या स्वरूप</th>
+                                <th>साधना / कृपा लाभ</th>
+                                <th>उनके भैरव बाबा</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamic Row 1 -->
+                            <tr class="lang-en">
+                                <td class="highlight">1</td>
+                                <td><strong>Maa Kali</strong></td>
+                                <td>Victory over time, death, and crises</td>
+                                <td><strong>Mahakal Bhairav</strong></td>
+                            </tr>
+                            <tr class="lang-hi">
+                                <td class="highlight">1</td>
+                                <td><strong>Maa Kali (माँ काली)</strong></td>
+                                <td>समय, काल और संकट पर विजय</td>
+                                <td><strong>Mahakal Bhairav (महाकाल भैरव)</strong></td>
+                            </tr>
+                            <!-- Dynamic Row 2 -->
+                            <tr class="lang-en">
+                                <td class="highlight">2</td>
+                                <td><strong>Maa Tara</strong></td>
+                                <td>Savior power, knowledge, and speech siddhi</td>
+                                <td><strong>Akshobhya Bhairav</strong></td>
+                            </tr>
+                            <tr class="lang-hi">
+                                <td class="highlight">2</td>
+                                <td><strong>Maa Tara (माँ तारा)</strong></td>
+                                <td>तारणहार शक्ति, ज्ञान और वाक सिद्धि</td>
+                                <td><strong>Akshobhya Bhairav (अक्षोभ्य भैरव)</strong></td>
+                            </tr>
+                            <!-- Dynamic Row 3 -->
+                            <tr class="lang-en">
+                                <td class="highlight">3</td>
+                                <td><strong>Maa Tripura Sundari</strong></td>
+                                <td>Shodashi form, salvation, and worldly opulence</td>
+                                <td><strong>Laliteshwar Bhairav</strong></td>
+                            </tr>
+                            <tr class="lang-hi">
+                                <td class="highlight">3</td>
+                                <td><strong>Maa Tripura Sundari (माँ त्रिपुर सुंदरी)</strong></td>
+                                <td>षोडशी रूप, मोक्ष और सांसारिक वैभव</td>
+                                <td><strong>Laliteshwar Bhairav (ललितेश्वर भैरव)</strong></td>
+                            </tr>
+                            <!-- Dynamic Row 8 (Baglamukhi Highlighted) -->
+                            <tr class="lang-en">
+                                <td class="highlight">8</td>
+                                <td><span class="highlight"><strong>Maa Baglamukhi</strong></span></td>
+                                <td>Stambhan power, victory in lawsuits, and protection</td>
+                                <td><strong>Ekavaktra / Mrityunjay</strong></td>
+                            </tr>
+                            <tr class="lang-hi">
+                                <td class="highlight">8</td>
+                                <td><span class="highlight"><strong>Maa Baglamukhi (माँ बगलामुखी)</strong></span></td>
+                                <td>स्तम्भन शक्ति, मुकदमे में विजय और रक्षा</td>
+                                <td><strong>Ekavaktra / Mrityunjay (एकवक्त्र / मृत्युंजय)</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title">
+                    <span class="lang-en">Royal Turban Tying & Event Styling</span>
+                    <span class="lang-hi">रॉयल साफा टायिंग एवं इवेंट स्टाइलिंग</span>
+                </h2>
+                <p class="lang-en">Apart from Darshan and Anushthan guidance, we provide **Premium Event Management** and **Safa Tying Services** across Madhya Pradesh and the Rajasthan border to add a royal touch to your celebrations:</p>
+                <p class="lang-hi">दर्शन और अनुष्ठान गाइड के अलावा, हम पूरे मध्य प्रदेश और राजस्थान बॉर्डर पर आपके उत्सवों को शाही रूप देने के लिए **प्रीमियम इवेंट मैनेजमेंट** और **साफा टायिंग सर्विसेज** प्रदान करते हैं:</p>
+                <ul class="feature-list">
+                    <li>
+                        <span class="lang-en"><span class="highlight">Professional Turban Tying (Safa Styling):</span> Live styling of Rajasthani, Marwari, Jodhpuri, and Mewari safas for weddings and corporate events.</span>
+                        <span class="lang-hi"><span class="highlight">प्रोफेशनल साफा टायिंग (साफा स्टाइलिंग):</span> शादियों और कॉर्पोरेट इवेंट्स के लिए राजस्थानी, मारवाड़ी, जोधपुरी और मेवाड़ी साफों की लाइव स्टाइलिंग।</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><span class="highlight">Cinematic Portfolio Setup:</span> All setups and styling managed by us conform perfectly to high-fidelity photography (8K DSLR quality finish).</span>
+                        <span class="lang-hi"><span class="highlight">सिनेमैटिक पोर्टफोलियो सेटअप:</span> हमारे द्वारा मैनेज किए गए सभी सेटअप और स्टाइलिंग हाई-फिडेलिटी फोटोग्राफी (8K DSLR क्वालिटी फिनिश) के अनुरूप होते हैं।</span>
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <aside>
+            <div class="sidebar-card">
+                <h3 class="form-title">
+                    <span class="lang-en">Anushthan & Event Booking</span>
+                    <span class="lang-hi">अनुष्ठान एवं इवेंट बुकिंग</span>
+                </h3>
+                <p class="form-desc">
+                    <span class="lang-en">Submit your details to book a Maa Baglamukhi Puja management or Royal Safa tying slot.</span>
+                    <span class="lang-hi">माँ बगलामुखी पूजा प्रबंधन या रॉयल साफा टायिंग स्लॉट बुक करने के लिए डिटेल्स सबमिट करें।</span>
+                </p>
+                
+                <form onsubmit="alert('Jai Maa Baglamukhi! Your data has been securely submitted. We will contact you shortly.'); return false;">
+                    <div class="input-group">
+                        <label for="usrname">
+                            <span class="lang-en">Your Full Name</span>
+                            <span class="lang-hi">आपका पूरा नाम</span>
+                        </label>
+                        <input type="text" id="usrname" class="form-input" placeholder="Yajman Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="usrtel">WhatsApp Number</label>
+                        <input type="tel" id="usrtel" class="form-input" placeholder="9352836546" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="usrservice">
+                            <span class="lang-en">Service Selection</span>
+                            <span class="lang-hi">सर्विस चयन</span>
+                        </label>
+                        <select id="usrservice" class="form-input">
+                            <option value="bagla-havan">Maa Baglamukhi Protection Havan</option>
+                            <option value="mahavidya-puja">Das Mahavidya Anushthan Guide</option>
+                            <option value="safa-event">Royal Turban/Safa Booking</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="usrmsg">
+                            <span class="lang-en">Sankalp / Gotra / Event Date</span>
+                            <span class="lang-hi">संकल्प / गोत्र / इवेंट तिथि</span>
+                        </label>
+                        <textarea id="usrmsg" class="form-input" rows="4" placeholder="Details..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-3d-submit">
+                        <span class="lang-en">Secure Registration</span>
+                        <span class="lang-hi">सुरक्षित पंजीकरण</span>
+                    </button>
+                </form>
+
+                <div class="location-box">
+                    <h4 style="color: var(--primary-gold); margin-bottom: 5px;">📍 Verified Office Location:</h4>
+                    <p style="margin: 0; font-size: 13px; color: #bbb;">
+                        Siddh Peeth Marg, Nalkheda<br>
+                        Tehsil: Nalkheda (Agar Malwa)<br>
+                        Madhya Pradesh - 465445
+                    </p>
+                </div>
+            </div>
+        </aside>
     </div>
 
     <footer>
-        <p><i class="fa-solid fa-location-dot"></i> माँ बगलामुखी मंदिर परिसर, मुख्य मार्ग, नलखेड़ा, जिला-आगर मालवा (मध्य प्रदेश) - 465445</p>
-        <p style="margin-top: 12px; font-size: 0.85rem; color: #555;">&copy; 2026 माँ बगलामुखी अनुष्ठान केंद्र. सर्वाधिकार सुरक्षित।</p>
+        <p>&copy; 2026 Nalkheda Darshan & Digital Services Portal. All Rights Reserved.</p>
     </footer>
 
+    <!-- JavaScript For Real-Time Language Translation Toggle -->
     <script>
-        function redirectToWhatsApp(event) {
-            event.preventDefault();
-            var name = document.getElementById('y-name').value;
-            var phone = document.getElementById('y-phone').value;
-            var type = document.getElementById('pujan-type').value;
-            
-            var baseMsg = "प्रणाम पंडित जी,\nमैंने वेबसाइट पर पूजन बुक किया है:\n\n";
-            baseMsg += "👤 नाम: " + name + "\n";
-            baseMsg += "📞 मोबाइल: " + phone + "\n";
-            baseMsg += "🔱 अनुष्ठान: " + type + "\n\n";
-            baseMsg += "कृपया गोत्र संकल्प और पूजा का समय निश्चित करें।";
-            
-            var url = "https://wa.me/919352836546?text=" + encodeURIComponent(baseMsg);
-            window.open(url, '_blank');
+        function toggleLanguage() {
+            document.body.classList.toggle('hindi-mode');
         }
     </script>
-
 </body>
 </html>
