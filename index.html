@@ -1,43 +1,339 @@
-    <div class="container">
-        
-        <div class="welcome-card">
-            <h2>विशेष अनुष्ठान एवं साधना केंद्र</h2>
-            <p>संसार की समस्त तांत्रिक व सात्विक बाधाओं के शमन हेतु माँ पीताम्बरा (बगलामुखी) की साधना अचूक है। नलखेड़ा स्थित स्वयंभू सिद्धपीठ में विधि-विधान से पूजन संपन्न करवाने के लिए आप सीधे संपर्क कर सकते हैं।</p>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baglamukhi Havan Booking | Pandit Ji Abhishek Sharma</title>
+  <meta name="description" content="Baglamukhi Havan, Pujan aur booking ke liye online website. Yajman details, gotra, receipt aur confirmation ke saath." />
+  <style>
+    :root{
+      --bg:#fff8e7;
+      --card:#ffffff;
+      --primary:#b8860b;
+      --primary-dark:#8a6500;
+      --text:#2b2b2b;
+      --muted:#6b6b6b;
+      --border:#ead9a8;
+      --success:#1b7f3a;
+      --danger:#b00020;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#fffaf0 0%, #fff 100%);
+      color:var(--text);
+    }
+    header{
+      background:linear-gradient(135deg,var(--primary),#d7a21c);
+      color:#fff;
+      padding:22px 16px;
+      box-shadow:var(--shadow);
+    }
+    .container{max-width:1150px;margin:auto;padding:0 16px}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:20px;
+      align-items:center;
+    }
+    .hero h1{margin:0 0 10px;font-size:2rem}
+    .hero p{margin:0 0 16px;line-height:1.7}
+    .btn{
+      display:inline-block;
+      border:none;
+      background:#fff;
+      color:var(--primary-dark);
+      padding:12px 18px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:bold;
+      cursor:pointer;
+      margin-right:10px;
+      margin-top:8px;
+    }
+    .btn.primary{background:var(--primary-dark);color:#fff}
+    main{padding:28px 0 50px}
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px;
+    }
+    h2{margin-top:0;color:var(--primary-dark)}
+    label{display:block;font-weight:bold;margin:12px 0 6px}
+    input, select, textarea{
+      width:100%;
+      padding:12px 14px;
+      border:1px solid #d8d8d8;
+      border-radius:12px;
+      font-size:15px;
+      outline:none;
+    }
+    textarea{min-height:100px;resize:vertical}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .full{grid-column:1/-1}
+    .muted{color:var(--muted);font-size:.95rem;line-height:1.6}
+    .info-box{
+      background:#fffdf6;
+      border:1px dashed var(--border);
+      padding:14px;
+      border-radius:14px;
+      margin-top:12px;
+      line-height:1.7;
+    }
+    .receipt{
+      display:none;
+      margin-top:18px;
+      border:2px solid var(--primary);
+      padding:18px;
+      border-radius:16px;
+      background:#fffef9;
+    }
+    .receipt h3{margin-top:0}
+    .badge{
+      display:inline-block;
+      background:#e8f6ec;
+      color:var(--success);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:bold;
+    }
+    footer{
+      padding:22px 16px;
+      background:#222;
+      color:#eee;
+      text-align:center;
+      line-height:1.7;
+    }
+    .social a{
+      display:inline-block;
+      margin:6px 10px 0 0;
+      color:var(--primary-dark);
+      text-decoration:none;
+      font-weight:bold;
+    }
+    .notice{
+      background:#fff3cd;
+      border:1px solid #f1d27a;
+      padding:12px 14px;
+      border-radius:12px;
+      margin-top:12px;
+      line-height:1.7;
+      color:#6a4d00;
+    }
+    .small{font-size:13px}
+    @media (max-width: 860px){
+      .hero,.grid,.row{grid-template-columns:1fr}
+      .hero h1{font-size:1.6rem}
+    }
+    @media print{
+      header, footer, .no-print{display:none !important;}
+      body{background:#fff}
+      .card{box-shadow:none;border:none}
+      .receipt{display:block !important;border:1px solid #000}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container hero">
+      <div>
+        <h1>श्री Baglamukhi Havan Booking</h1>
+        <p>Baglamukhi Pujan, Havan, Anushthan aur Sankalp booking ke liye online form. Yahan se yajman details bharein aur booking receipt generate karein.</p>
+        <a class="btn primary" href="#booking">Booking Karein</a>
+        <a class="btn" href="#pandit">Pandit Ji Details</a>
+      </div>
+      <div class="card" style="background:rgba(255,255,255,.15);color:#fff;border:none;">
+        <h3 style="margin-top:0;">Seva Vishesh</h3>
+        <ul style="padding-left:18px;line-height:1.9;margin-bottom:0;">
+          <li>Baglamukhi Havan</li>
+          <li>Pujan aur Sankalp</li>
+          <li>Chola / Anushthan</li>
+          <li>Griha Pravesh / Karya Siddhi</li>
+          <li>Online Booking aur Receipt</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <section class="card" id="pandit">
+        <h2>Pandit Ji Profile</h2>
+        <p class="muted">Yahan Pandit Ji Abhishek Sharma ki verified details rakhi ja sakti hain. Public website par contact information share karne se pehle unki permission lena zaroori hai [web:20][web:22].</p>
+
+        <div class="info-box">
+          <strong>Name:</strong> Pandit Ji Abhishek Sharma<br />
+          <strong>Mobile:</strong> +91 XXXXXXXXXX<br />
+          <strong>WhatsApp:</strong> +91 XXXXXXXXXX<br />
+          <strong>Email:</strong> pandit@example.com<br />
+          <strong>Address:</strong> Jaipur, Rajasthan<br />
         </div>
 
-        <section class="services">
-            <h2>प्रमुख पूजन एवं अनुष्ठान सेवाएं</h2>
-            <div class="service-list">
-                <div class="service-item">
-                    <h3>राजयोग व राजनीति विजय</h3>
-                    <p>चुनाव में निश्चित सफलता, उच्च पद प्राप्ति एवं राजनैतिक बाधाओं के निवारण हेतु विशेष पीताम्बरा यज्ञ।</p>
-                </div>
-                <div class="service-item">
-                    <h3>शत्रु बाधा व कोर्ट-केस</h3>
-                    <p>मुकदमों में विजय, गुप्त शत्रुओं से सुरक्षा एवं विवादों के स्थाई समाधान हेतु विशेष दमन अनुष्ठान।</p>
-                </div>
-                <div class="service-item">
-                    <h3>व्यापार व धन वृद्धि</h3>
-                    <p>रुके हुए धन की प्राप्ति, व्यापारिक घाटे से मुक्ति एवं निरंतर उन्नति के लिए महालक्ष्मी-बगलामुखी पूजन।</p>
-                </div>
-                <div class="service-item">
-                    <h3>ग्रह शांति व दोष निवारण</h3>
-                    <p>कुंडली के मारकेश दोष, राहु-केतु पीड़ा, और असाध्य संकटों की शांति हेतु वैदिक विधान द्वारा यज्ञ।</p>
-                </div>
+        <h3 style="margin-bottom:8px;">Social Accounts</h3>
+        <div class="social">
+          <a href="#" target="_blank">YouTube</a>
+          <a href="#" target="_blank">Instagram</a>
+          <a href="#" target="_blank">Facebook</a>
+          <a href="#" target="_blank">WhatsApp Channel</a>
+        </div>
+
+        <div class="notice small">
+          <strong>Privacy Note:</strong> Booking form me jo bhi personal data liya jaata hai, uske liye clear consent aur purpose mention karein. Minimum data hi collect karein jo booking process ke liye zaroori ho [web:20][web:22][web:25].
+        </div>
+      </section>
+
+      <section class="card" id="booking">
+        <h2>Booking Form</h2>
+        <form id="bookingForm">
+          <div class="row">
+            <div>
+              <label>Yajman Naam</label>
+              <input type="text" id="yajmanName" placeholder="Apna naam" required />
             </div>
-        </section>
+            <div>
+              <label>Gotra</label>
+              <input type="text" id="gotra" placeholder="Apna gotra" required />
+            </div>
+            <div>
+              <label>Mobile Number</label>
+              <input type="tel" id="mobile" placeholder="10 digit mobile" required />
+            </div>
+            <div>
+              <label>City</label>
+              <input type="text" id="city" placeholder="Jaipur" />
+            </div>
+            <div>
+              <label>Date</label>
+              <input type="date" id="date" required />
+            </div>
+            <div>
+              <label>Time</label>
+              <input type="time" id="time" required />
+            </div>
+            <div class="full">
+              <label>Service Type</label>
+              <select id="service">
+                <option>Baglamukhi Havan</option>
+                <option>Baglamukhi Pujan</option>
+                <option>Anushthan</option>
+                <option>Sankalp Pujan</option>
+                <option>Chola / Path</option>
+              </select>
+            </div>
+            <div class="full">
+              <label>Purpose / Sankalp</label>
+              <textarea id="purpose" placeholder="Jaise: Karyasiddhi, shanti, vivah, vyapar, rog-nivaran..."></textarea>
+            </div>
+            <div class="full">
+              <label>Consent</label>
+              <div class="notice">
+                <input type="checkbox" id="consent" required />
+                <span>Maine privacy notice padh liya hai aur booking ke liye apni jankari dene ki sahamati deta/deti hoon.</span>
+              </div>
+            </div>
+          </div>
 
-        <section class="contact-section">
-            <h2>आचार्य पंडित अभिषेक शर्मा जी</h2>
-            <p>पूजन का शुभ मुहूर्त जानने, दक्षिणा एवं सामग्री की जानकारी हेतु अभी कॉल करें।</p>
-            <a href="tel:+919352836546" class="btn-call">📞 कॉल करें: 9352836546</a>
-        </section>
+          <button class="btn primary no-print" type="submit">Booking Receipt Generate Karein</button>
+          <button class="btn no-print" type="button" onclick="window.print()">Print Receipt</button>
+        </form>
 
+        <div class="receipt" id="receipt">
+          <h3>Booking Receipt</h3>
+          <p><span class="badge">Confirmed</span></p>
+          <div id="receiptContent" style="line-height:1.9;"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Seva Vivaran</h2>
+        <p class="muted">Website ko is tarah design kiya gaya hai ki yajman ko booking ke baad turant receipt mil sake. Aap isme payment section, UPI QR, aur automatic WhatsApp confirmation bhi jod sakte hain.</p>
+
+        <ul style="line-height:1.9;">
+          <li>Booking ID auto-generate hota hai</li>
+          <li>Yajman naam aur gotra record hote hain</li>
+          <li>Service aur sankalp details store hoti hain</li>
+          <li>Receipt print ya download ki ja sakti hai</li>
+        </ul>
+
+        <div class="info-box">
+          <strong>Suggested Payment:</strong> UPI / Bank Transfer / Cash on Arrival<br />
+          <strong>Booking Status:</strong> Pending / Confirmed / Completed<br />
+          <strong>Support:</strong> WhatsApp +91 XXXXXXXXXX
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Privacy & Consent</h2>
+        <p class="muted">Digital personal data ke liye website par privacy notice aur consent text dikhana best practice hai. Form me mobile number, naam, gotra, aur address ko sirf booking purpose ke liye use karein [web:20][web:22][web:25].</p>
+
+        <div class="notice">
+          <strong>Sample Privacy Notice:</strong><br />
+          Aapki booking details sirf havan booking, receipt generation, aur booking confirmation ke liye use ki jayengi. Hum aapka data third party ke saath bina aapki sahamati ke share nahi karenge.
+        </div>
+      </section>
     </div>
+  </main>
 
-    <footer>
-        <p>&copy; 2026 माँ बगलामुखी अनुष्ठान केंद्र, नलखेड़ा. सर्वाधिकार सुरक्षित।</p>
-    </footer>
+  <footer>
+    <div class="container">
+      © 2026 Baglamukhi Havan Booking | Pandit Ji Abhishek Sharma<br />
+      Mobile: +91 XXXXXXXXXX | Email: pandit@example.com
+    </div>
+  </footer>
 
+  <script>
+    const form = document.getElementById('bookingForm');
+    const receipt = document.getElementById('receipt');
+    const receiptContent = document.getElementById('receiptContent');
+
+    function bookingId() {
+      return 'BH' + Date.now().toString().slice(-8);
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const name = document.getElementById('yajmanName').value.trim();
+      const gotra = document.getElementById('gotra').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
+      const city = document.getElementById('city').value.trim();
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const service = document.getElementById('service').value;
+      const purpose = document.getElementById('purpose').value.trim();
+
+      const id = bookingId();
+      const today = new Date().toLocaleString('hi-IN');
+
+      receiptContent.innerHTML = `
+        <strong>Booking ID:</strong> ${id}<br>
+        <strong>Yajman Name:</strong> ${name}<br>
+        <strong>Gotra:</strong> ${gotra}<br>
+        <strong>Mobile:</strong> ${mobile}<br>
+        <strong>City:</strong> ${city || '-'}<br>
+        <strong>Date:</strong> ${date}<br>
+        <strong>Time:</strong> ${time}<br>
+        <strong>Service:</strong> ${service}<br>
+        <strong>Purpose:</strong> ${purpose || '-'}<br>
+        <strong>Pandit Ji:</strong> Abhishek Sharma<br>
+        <strong>Booking Time:</strong> ${today}<br>
+        <strong>Payment Status:</strong> Pending
+      `;
+
+      receipt.style.display = 'block';
+      receipt.scrollIntoView({behavior:'smooth'});
+    });
+  </script>
 </body>
 </html>
