@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>माँ बगलामुखी दिव्य अनुष्ठान केंद्र | पं. अभिषेक शर्मा, नलखेड़ा</title>
+    <title>माँ बगलामुखी मंदिर नलखेड़ा - पूरी जानकारी एवं ऑनलाइन बुकिंग | YatraDham Style</title>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --gold-primary: #FFC107;
-            --gold-dark: #FF9800;
-            --spiritual-red: #7A0000;
-            --bright-red: #D32F2F;
-            --dark-bg: #1A0D00;
-            --card-bg: #FFFDF6;
+            --yatra-orange: #F57C00;
+            --pitambari-yellow: #FFD54F;
+            --spiritual-red: #800000;
+            --dark-velvet: #1A0F00;
+            --bg-soft: #FFFDF9;
+            --text-dark: #332A22;
+            --card-shadow: 0 10px 30px rgba(128, 0, 0, 0.08);
         }
 
         * {
@@ -25,453 +26,497 @@
         }
 
         body {
-            background-color: #FAF6ED;
-            color: #333;
+            background-color: var(--bg-soft);
+            color: var(--text-dark);
+            overflow-x: hidden;
         }
 
-        /* Top Bar Contact Info */
-        .top-bar {
+        /* YatraDham Style Top Alert Bar */
+        .top-info-strip {
             background: var(--spiritual-red);
-            color: #FFF;
+            color: white;
+            padding: 8px 5%;
             font-size: 0.85rem;
-            padding: 6px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid var(--gold-primary);
+            border-bottom: 3px solid var(--pitambari-yellow);
         }
-        .top-bar a { color: var(--gold-primary); text-decoration: none; font-weight: bold; }
+        .top-info-strip a { color: var(--pitambari-yellow); text-decoration: none; font-weight: bold; }
 
-        /* Professional Header Navbar */
-        .navbar {
+        /* Premium Navigation Bar with Logo & Hamburger Menu */
+        .yatra-navbar {
             background: white;
-            padding: 12px 5%;
+            padding: 15px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo-box {
+        .yatra-logo-area {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .logo-icon {
-            background: linear-gradient(135deg, #FFD700, #FF5722);
+        .yatra-logo-circle {
+            background: linear-gradient(135deg, var(--yatra-orange), var(--pitambari-yellow));
             color: white;
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-weight: bold;
-            font-size: 1.3rem;
             font-family: 'Marcellus', serif;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.16);
-        }
-
-        .logo-title h1 {
-            font-family: 'Marcellus', serif;
-            color: var(--spiritual-red);
             font-size: 1.4rem;
-            letter-spacing: 1px;
-        }
-        .logo-title p { font-size: 0.75rem; color: #666; font-weight: 500; text-transform: uppercase;}
-
-        .menu-toggle-btn {
-            background: var(--card-bg);
-            border: 1px solid #FFE0B2;
-            padding: 8px 14px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1.3rem;
-            color: var(--spiritual-red);
             font-weight: bold;
+            box-shadow: 0 4px 10px rgba(245, 124, 0, 0.3);
+        }
+
+        .yatra-logo-text h1 {
+            font-family: 'Marcellus', serif;
+            color: var(--spiritual-red);
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+        .yatra-logo-text p {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: var(--yatra-orange);
+            font-weight: 600;
+        }
+
+        .hamburger-btn {
+            background: #FFF3E0;
+            border: 1px solid #FFE082;
+            font-size: 1.8rem;
+            color: var(--spiritual-red);
+            cursor: pointer;
+            padding: 4px 14px;
+            border-radius: 8px;
             transition: 0.3s;
         }
-        .menu-toggle-btn:hover { background: var(--gold-primary); color: var(--spiritual-red); }
+        .hamburger-btn:hover { background: var(--pitambari-yellow); }
 
-        /* Screen-shot Styled Side Menu */
-        .side-menu {
+        /* App-Style Sliding Menu (Perfect Sidebar) */
+        .yatra-sidebar {
             position: fixed;
             top: 0;
             left: -320px;
             width: 300px;
             height: 100%;
             background: white;
-            box-shadow: 5px 0 25px rgba(0,0,0,0.2);
+            box-shadow: 15px 0 40px rgba(0,0,0,0.15);
             z-index: 2000;
-            transition: 0.4s cubic-bezier(0.05, 0.74, 0.2, 1);
-            padding: 25px;
+            transition: 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+            padding: 30px 20px;
+            border-right: 5px solid var(--yatra-orange);
         }
-        .side-menu.open { left: 0; }
+        .yatra-sidebar.active { left: 0; }
 
-        .side-menu-header {
+        .sidebar-brand {
             text-align: center;
             padding-bottom: 20px;
-            border-bottom: 1px solid #F0F0F0;
-            position: relative;
+            border-bottom: 2px solid #FFF3E0;
         }
-        .close-menu-btn {
+        .close-sidebar-btn {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
             background: none;
             border: none;
-            font-size: 1.4rem;
-            color: #999;
             cursor: pointer;
+            color: #999;
         }
 
-        .side-links {
+        .sidebar-menu-links {
             list-style: none;
             margin-top: 25px;
         }
-        .side-links li a {
+        .sidebar-menu-links li a {
             display: block;
             padding: 14px 18px;
             color: var(--spiritual-red);
-            text-decoration: none;
             font-weight: 600;
-            font-size: 1.05rem;
-            border-bottom: 1px solid #FAFAFA;
+            text-decoration: none;
             border-radius: 6px;
             transition: 0.3s;
         }
-        .side-links li a:hover {
-            background: #FFF9E6;
-            color: var(--bright-red);
+        .sidebar-menu-links li a:hover {
+            background: #FFFDE7;
+            color: var(--yatra-orange);
             padding-left: 25px;
         }
 
-        .menu-overlay {
+        .overlay-screen {
             position: fixed;
-            top:0; left:0; width:100%; height:100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
             z-index: 1500;
             display: none;
         }
-        .menu-overlay.open { display: block; }
+        .overlay-screen.active { display: block; }
 
-        /* Luxury Hero Section */
-        .hero-banner {
-            background: linear-gradient(rgba(26, 13, 0, 0.82), rgba(26, 13, 0, 0.9)), 
+        /* Mega Portal Banner */
+        .portal-hero {
+            background: linear-gradient(rgba(26, 15, 0, 0.85), rgba(40, 0, 0, 0.9)), 
                         url('https://images.unsplash.com/photo-1609137144813-2dbe4889ec7a?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             color: white;
             text-align: center;
-            padding: 90px 20px;
-            border-bottom: 6px solid var(--gold-primary);
+            padding: 100px 20px;
+            border-bottom: 5px solid var(--yatra-orange);
         }
-        .hero-banner h2 {
+        .portal-hero h2 {
             font-family: 'Marcellus', serif;
-            font-size: 2.5rem;
-            color: var(--gold-primary);
+            font-size: 2.6rem;
+            color: var(--pitambari-yellow);
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        .mantra-banner {
-            max-width: 750px;
+        .portal-mantra {
+            max-width: 800px;
             margin: 20px auto;
-            background: rgba(255, 193, 7, 0.08);
-            border: 1px dashed var(--gold-primary);
-            padding: 15px 25px;
+            border: 1px dashed var(--pitambari-yellow);
+            background: rgba(255, 213, 79, 0.05);
+            padding: 20px;
             border-radius: 8px;
+            font-size: 1.15rem;
             color: #FFE082;
-            font-size: 1.1rem;
-            font-weight: 500;
+            line-height: 1.7;
         }
 
-        /* Profile Block */
-        .profile-container {
-            max-width: 850px;
+        /* Trust/Pandit Profile Badge */
+        .trust-profile-box {
+            max-width: 950px;
             background: white;
-            margin: -40px auto 40px auto;
+            margin: -50px auto 40px auto;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 35px;
+            box-shadow: var(--card-shadow);
+            padding: 40px 30px;
             text-align: center;
-            border-bottom: 4px solid var(--spiritual-red);
+            border-top: 6px solid var(--yatra-orange);
         }
-        .profile-container h3 {
-            font-family: 'Marcellus', serif;
-            color: var(--spiritual-red);
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-        .badge {
-            background: #FFF3E0;
-            color: var(--gold-dark);
-            padding: 4px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        /* Section Global Titles */
-        .section-head {
-            text-align: center;
-            margin: 50px 0 30px 0;
-        }
-        .section-head h3 {
+        .trust-profile-box h3 {
             font-family: 'Marcellus', serif;
             color: var(--spiritual-red);
             font-size: 2rem;
-        }
-        .section-head div {
-            width: 70px; height: 3px; background: var(--gold-primary); margin: 8px auto;
+            margin-bottom: 8px;
         }
 
-        /* Grid Services */
-        .grid-layout {
+        /* Complete Baglamukhi Jankari Info Grid */
+        .info-section-wrapper {
             max-width: 1100px;
-            margin: 0 auto;
+            margin: 50px auto;
             padding: 0 20px;
+        }
+
+        .global-section-title {
+            text-align: center;
+            font-family: 'Marcellus', serif;
+            color: var(--spiritual-red);
+            font-size: 2.2rem;
+            margin-bottom: 35px;
+        }
+        .global-section-title::after {
+            content: ''; display: block; width: 60px; height: 3px; background: var(--yatra-orange); margin: 8px auto;
+        }
+
+        .jankari-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
-        .service-box {
+
+        .jankari-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            border-left: 5px solid var(--spiritual-red);
+        }
+        .jankari-card h4 {
+            color: var(--yatra-orange);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-family: 'Marcellus', serif;
+        }
+        .jankari-card p, .jankari-card li {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        /* Interactive Tabs for Route Guide */
+        .tabs-container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .tab-btn {
+            background: white;
+            border: 1px solid #E0E0E0;
+            padding: 12px 25px;
+            font-weight: 600;
+            color: #555;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+        .tab-btn.active {
+            background: var(--spiritual-red);
+            color: white;
+            border-color: var(--spiritual-red);
+        }
+        .tab-panel {
             background: white;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border-top: 4px solid var(--gold-primary);
-            transition: 0.3s;
+            box-shadow: var(--card-shadow);
+            display: none;
+            border-top: 4px solid var(--pitambari-yellow);
         }
-        .service-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            border-top-color: var(--spiritual-red);
-        }
-        .service-box h4 { color: var(--spiritual-red); margin-bottom: 12px; font-size: 1.25rem; }
+        .tab-panel.active { display: block; }
 
-        /* Route Guide Styling */
-        .route-wrapper {
-            background: #FFF9EE;
-            padding: 40px 20px;
-            margin-top: 50px;
-        }
-        .route-card-box {
+        /* Booking Form Section */
+        .yatra-form-box {
+            max-width: 650px;
             background: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
-        .route-card-box h5 { color: var(--bright-red); font-size: 1.1rem; margin-bottom: 8px; }
-
-        /* Modern Quick Booking Form */
-        .booking-section {
-            max-width: 600px;
-            margin: 50px auto;
-            background: white;
-            padding: 35px;
+            margin: 60px auto;
+            padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            box-shadow: var(--card-shadow);
+            border: 1px solid #FFE082;
         }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: 500; }
-        .form-control {
-            width: 100%; padding: 12px; border: 1px solid #DDD; border-radius: 6px; font-size: 1rem;
+        .form-input-group { margin-bottom: 20px; }
+        .form-input-group label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; }
+        .custom-input {
+            width: 100%; padding: 14px; border: 1px solid #DDD; border-radius: 6px; font-size: 1rem;
         }
-        .form-control:focus { border-color: var(--gold-dark); outline: none; }
+        .custom-input:focus { border-color: var(--yatra-orange); outline: none; }
 
-        /* Action & Floating Buttons */
-        .action-flex {
-            display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 25px;
+        /* Dynamic Conversion Action Buttons */
+        .btn-holder {
+            display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;
         }
-        .button-main {
-            padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 600;
-            color: white; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: 0.3s; border: none; cursor: pointer;
+        .action-button {
+            padding: 14px 35px; border-radius: 50px; text-decoration: none; font-weight: bold;
+            font-size: 1.05rem; color: white; display: inline-flex; align-items: center; gap: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: 0.3s; cursor: pointer; border: none;
         }
-        .btn-green { background: #25D366; }
-        .btn-blue { background: #007BFF; }
-        .btn-gold { background: linear-gradient(to right, var(--gold-dark), var(--gold-primary)); color: var(--dark-bg); }
-        .button-main:hover { transform: translateY(-2px); opacity: 0.95; }
+        .btn-whatsapp { background-color: #25D366; }
+        .btn-phone { background-color: #007BFF; }
+        .btn-submit-form { background: linear-gradient(to right, var(--yatra-orange), var(--pitambari-yellow)); color: var(--dark-velvet); width: 100%; justify-content: center; }
+        .action-button:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
 
-        /* Map Button */
-        .map-btn {
-            background: #E0F2FE; color: #0369A1; font-weight: bold; padding: 10px 20px;
-            border-radius: 6px; text-decoration: none; display: inline-block; margin-top: 15px;
-            font-size: 0.9rem;
-        }
-
-        /* Premium Footer */
-        footer {
-            background: var(--dark-bg);
-            color: #BBB;
+        /* Premium Portal Footer */
+        .yatra-footer {
+            background: var(--dark-velvet);
+            color: #B0A8A0;
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
+            border-top: 5px solid var(--yatra-orange);
             font-size: 0.9rem;
-            border-top: 4px solid var(--gold-primary);
         }
-        footer h4 { color: white; font-family: 'Marcellus', serif; margin-bottom: 10px; font-size: 1.3rem; }
+        .yatra-footer h3 { font-family: 'Marcellus', serif; color: white; margin-bottom: 8px; font-size: 1.6rem; }
 
-        @media(max-width: 768px) {
-            .hero-banner h2 { font-size: 1.8rem; }
-            .navbar { padding: 10px 15px; }
-            .logo-title h1 { font-size: 1.15rem; }
-            .action-flex .button-main { width: 100%; justify-content: center; }
+        @media (max-width: 768px) {
+            .portal-hero h2 { font-size: 1.8rem; }
+            .tabs-nav { flex-direction: column; }
+            .yatra-form-box { padding: 25px; margin: 30px 15px; }
+            .action-button { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <span>📍 सिद्धपीठ नलखेड़ा धाम, मध्य प्रदेश</span>
-        <span>📞 संपर्क: <a href="tel:+919352836546">9352836546</a></span>
+    <div class="top-info-strip">
+        <span>📍 अधिकारिक तीर्थ दर्शन एवं अनुष्ठान गाइड - नलखेड़ा धाम</span>
+        <span>📞 हेल्पलाइन: <a href="tel:+919352836546">9352836546</a></span>
     </div>
 
-    <nav class="navbar">
-        <div class="logo-box">
-            <div class="logo-icon">बं</div>
-            <div class="logo-title">
-                <h1>बगलामुखी माता मंदिर</h1>
-                <p>ऑनलाइन पूजन एवं अनुष्ठान सेवा</p>
+    <nav class="yatra-navbar">
+        <div class="yatra-logo-area">
+            <div class="yatra-logo-circle">मां</div>
+            <div class="yatra-logo-text">
+                <h1>माँ बगलामुखी धाम</h1>
+                <p>YatraDham Official Partner</p>
             </div>
         </div>
-        <button class="menu-toggle-btn" onclick="openMenu()">☰ मेनू</button>
+        <button class="hamburger-btn" onclick="toggleSidebarMenu(true)">☰</button>
     </nav>
 
-    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
-    <div class="side-menu" id="sideMenu">
-        <div class="side-menu-header">
-            <button class="close-menu-btn" onclick="closeMenu()">✕</button>
-            <div class="logo-icon" style="margin: 10px auto;">बं</div>
-            <h2 style="font-family: 'Marcellus'; color: var(--spiritual-red); font-size: 1.2rem;">माँ बगलामुखी सेवा</h2>
+    <div class="overlay-screen" id="overlayScreen" onclick="toggleSidebarMenu(false)"></div>
+    <div class="yatra-sidebar" id="yatraSidebar">
+        <button class="close-sidebar-btn" onclick="toggleSidebarMenu(false)">✕</button>
+        <div class="sidebar-brand">
+            <div class="yatra-logo-circle" style="margin: 0 auto 10px auto;">मां</div>
+            <h2 style="font-family: 'Marcellus'; color: var(--spiritual-red); font-size: 1.3rem;">नलखेड़ा तीर्थ गाइड</h2>
         </div>
-        <ul class="side-links">
-            <li><a href="#" onclick="closeMenu()">मुख्य पृष्ठ (होम)</a></li>
-            <li><a href="#about" onclick="closeMenu()">हमारे बारे में</a></li>
-            <li><a href="#services" onclick="closeMenu()">विशेष अनुष्ठान</a></li>
-            <li><a href="#routes" onclick="closeMenu()">आने का मार्ग (रास्ता)</a></li>
-            <li><a href="#booking" onclick="closeMenu()">पूजा बुकिंग फॉर्म</a></li>
+        <ul class="sidebar-menu-links">
+            <li><a href="#" onclick="toggleSidebarMenu(false)">मुख्य पृष्ठ (होम)</a></li>
+            <li><a href="#about-temple" onclick="toggleSidebarMenu(false)">मंदिर का इतिहास</a></li>
+            <li><a href="#about-priest" onclick="toggleSidebarMenu(false)">आचार्य परिचय</a></li>
+            <li><a href="#routes-guide" onclick="toggleSidebarMenu(false)">मार्ग दर्शन (रास्ता)</a></li>
+            <li><a href="#booking-form" onclick="toggleSidebarMenu(false)">पूजा संकल्प बुकिंग</a></li>
         </ul>
     </div>
 
-    <section class="hero-banner">
-        <h2>॥ पीताम्बरा पीठ नलखेड़ा धाम ॥</h2>
-        <p style="font-size: 1.1rem; max-width: 650px; margin: 0 auto; color: #FFECB3;">जीवन के समस्त कष्टों, मुकदमों, तंत्र बाधा और शत्रु संकटों का अचूक वैदिक समाधान</p>
-        <div class="mantra-banner">
+    <section class="portal-hero">
+        <h2>विश्व प्रसिद्ध सिद्धपीठ माँ बगलामुखी मंदिर</h2>
+        <p style="color: #FFD54F; font-size: 1.1rem; max-width: 700px; margin: 0 auto;">लखुंदर नदी के तट पर स्थित महाभारत कालीन चमत्कारिक तांत्रिक सिद्धपीठ</p>
+        <div class="portal-mantra">
+            <b>॥ पीताम्बरा महामंत्र ॥</b><br>
             ॐ ह्लीं बगलामुखि सर्वदुष्टानां वाचं मुखं पदं स्तम्भय जिह्वां कीलय बुद्धिं विनाशय ह्रीं ॐ स्वाहा ।
         </div>
     </section>
 
-    <section class="profile-container" id="about">
-        <span class="badge">मुख्य अनुष्ठान विशेषज्ञ</span>
+    <section class="trust-profile-box" id="about-priest">
         <h3>पंडित अभिषेक शर्मा</h3>
-        <p style="max-width: 700px; margin: 10px auto; color: #555; line-height: 1.7;">
-            नलखेड़ा सिद्धपीठ पर माँ बगलामुखी की विशेष साधना, सवालाख मंत्र जाप, शत्रु स्तम्भन यज्ञ, एवं दोष निवारण पूजा पूर्ण शास्त्रीय एवं वैदिक पद्धति से संपन्न की जाती है। देश-विदेश के यजमान हमारी सेवाओं का लाभ ले रहे हैं।
+        <p style="color: var(--yatra-orange); font-weight: bold; margin-bottom: 12px;">📍 प्रधान पुरोहित प्रदाता - नलखेड़ा धाम (मध्य प्रदेश)</p>
+        <p style="max-width: 800px; margin: 0 auto; color: #555; line-height: 1.8;">
+            यदि आप शत्रुओं से त्रस्त हैं, अदालती मुकदमों से परेशान हैं या जीवन में तंत्र बाधा का सामना कर रहे हैं, तो प्राचीन सात्विक परंपरा के अनुसार माँ बगलामुखी मंदिर परिसर में विशेष अनुष्ठान एवं सवालाख मंत्र जाप संकल्प के साथ संपन्न करवाएं।
         </p>
-        <div class="action-flex">
-            <a href="https://wa.me/919352836546?text=जय%20माता%20दी%20पंडित%20जी,%20मुझे%20पूजा%20अनुष्ठान%20की%20जानकारी%20चाहिए।" class="button-main btn-green" target="_blank">WhatsApp परामर्श</a>
-            <a href="tel:+919352836546" class="button-main btn-blue">📞 तुरंत कॉल करें</a>
+        <div class="btn-holder">
+            <a href="https://wa.me/919352836546?text=जय%20माता%20दी%20पंडित%20जी,%20मुझे%20माँ%20बगलामुखी%20धाम%20अनुष्ठान%20की%20जानकारी%20चाहिए।" class="action-button btn-whatsapp" target="_blank">WhatsApp त्वरित परामर्श</a>
+            <a href="tel:+919352836546" class="action-button btn-phone">📞 सीधा संपर्क करें</a>
         </div>
     </section>
 
-    <section id="services" style="max-width: 1200px; margin: 0 auto; padding: 10px;">
-        <div class="section-head">
-            <h3>विशेष तांत्रिक एवं वैदिक अनुष्ठान</h3>
-            <div></div>
-        </div>
-        <div class="grid-layout">
-            <div class="service-box">
-                <h4>1. शत्रु स्तम्भन एवं संकट निवारण</h4>
-                <p>शत्रुओं को शांत करने, व्यापारिक प्रतिद्वंद्विता मिटाने और कोर्ट केस में पूर्ण विजय प्राप्त करने हेतु महायज्ञ।</p>
+    <h3 class="global-section-title" id="about-temple">माँ बगलामुखी मंदिर की संपूर्ण जानकारी</h3>
+    <section class="info-section-wrapper">
+        <div class="jankari-grid">
+            <div class="jankari-card">
+                <h4>1. मंदिर का गौरवशाली इतिहास</h4>
+                <p>नलखेड़ा स्थित माँ बगलामुखी का यह मंदिर अत्यंत प्राचीन और महाभारत कालीन माना जाता है। मान्यता है कि युद्ध में विजय प्राप्त करने के लिए भगवान कृष्ण के निर्देश पर स्वयं धर्मराज युधिष्ठिर ने यहाँ तंत्र साधना कर माँ बगलामुखी की स्थापना की थी।</p>
             </div>
-            <div class="service-box">
-                <h4>2. तंत्र बाधा एवं नजर दोष मुक्ति</h4>
-                <p>घर या व्यापार स्थल पर किए-कराए या किसी भी प्रकार के पुराने तांत्रिक दोष को काटने की महापूजा।</p>
+            <div class="jankari-card">
+                <h4>2. माँ बगलामुखी का स्वरूप</h4>
+                <p>यहाँ स्थापित प्रतिमा स्वयंभू और अलौकिक है। माँ बगलामुखी दसमहाविद्या में आठवीं महाविद्या हैं, जिन्हें पीताम्बरा भी कहा जाता है। इन्हें पीले रंग की वस्तुएं (पीले वस्त्र, पीली मिठाई, पीले फूल) अत्यंत प्रिय हैं। माँ का यह स्वरूप शत्रु विनाशक माना जाता है।</p>
             </div>
-            <div class="service-box">
-                <h4>3. सवालाख महामंत्र जाप पुरश्चरण</h4>
-                <p>योग्य और निपुण ब्राह्मणों द्वारा माँ बगलामुखी के दिव्य मंत्र का विधिवत संकल्प के साथ 1.25 लाख जाप।</p>
+            <div class="jankari-card">
+                <h4>3. प्रमुख पूजा एवं महात्म्य</h4>
+                <p>यहाँ मुख्य रूप से शत्रु स्तम्भन यज्ञ, कोर्ट-कचहरी मुकदमों में विजय हेतु अनुष्ठान, व्यापार वृद्धि बाधा निवारण, और गंभीर संकटों से मुक्ति हेतु विशेष पीला हवन और सवालाख मंत्र जाप का पुरश्चरण करवाया जाता है।</p>
+            </div>
+            <div class="jankari-card">
+                <h4>4. दर्शन एवं आरती का समय</h4>
+                <p>मंदिर प्रतिदिन प्रात: 04:00 बजे से रात्रि 10:00 बजे तक खुला रहता है।<br>
+                • <b>मंगला आरती:</b> प्रात: 05:00 बजे<br>
+                • <b>भोग आरती:</b> दोपहर 12:00 बजे<br>
+                • <b>संध्या आरती:</b> रात्रि 07:30 बजे (आरती का स्वरूप अत्यंत दिव्य होता है)</p>
             </div>
         </div>
     </section>
 
-    <section class="route-wrapper" id="routes">
-        <div class="section-head">
-            <h3>🚩 नलखेड़ा धाम आगमन मार्ग निर्देश</h3>
-            <div></div>
+    <h3 class="global-section-title" id="routes-guide">आगमन मार्ग एवं दूरी निर्देश</h3>
+    <section class="tabs-container">
+        <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchRouteTab(event, 'rail')">🚂 रेल मार्ग निर्देश</button>
+            <button class="tab-btn" onclick="switchRouteTab(event, 'road')">🚗 सड़क मार्ग एवं दूरी</button>
+            <button class="tab-btn" onclick="switchRouteTab(event, 'air')">✈️ हवाई मार्ग निर्देश</button>
         </div>
-        <div class="grid-layout" style="max-width: 950px;">
-            <div class="route-card-box">
-                <h5>🚂 ट्रेन द्वारा (By Railway)</h5>
-                <p>निकटतम मुख्य स्टेशन <b>उज्जैन जंक्शन</b> (100 किमी) है। इंदौर या उज्जैन से सीधे बसें व प्राइवेट कारें उपलब्ध हैं।</p>
-            </div>
-            <div class="route-card-box">
-                <h5>🚗 सड़क मार्ग (By Road)</h5>
-                <p>इंदौर से 150 किमी और भोपाल से 180 किमी। यह शहर इंदौर-कोटा राजमार्ग के बिल्कुल समीप स्थित है।</p>
-            </div>
+
+        <div id="rail" class="tab-panel active">
+            <h4>मुख्य रेलवे स्टेशन: उज्जैन जंक्शन (UJN)</h4>
+            <p>नलखेड़ा धाम पहुँचने के लिए सबसे मुख्य और सुगम रेलवे स्टेशन <b>उज्जैन जंक्शन</b> है, जो यहाँ से मात्र 100 किमी दूर है। उज्जैन रेलवे स्टेशन से बाहर निकलते ही मंदिर के लिए २४ घंटे बसें, शेयरिंग कैब और प्राइवेट टैक्सियां उपलब्ध रहती हैं।</p>
         </div>
-        <div style="text-align: center;">
-            <a href="https://maps.google.com/?q=Maa+Baglamukhi+Temple+Nalkheda" class="map-btn" target="_blank">🗺️ गूगल मैप पर रास्ता देखें (Live Route)</a>
+
+        <div id="road" class="tab-panel">
+            <h4>प्रमुख शहरों से सड़क मार्ग की दूरी:</h4>
+            <ul>
+                <li><b>उज्जैन से:</b> 100 किलोमीटर (वाया आगर मालवा)</li>
+                <li><b>इंदौर से:</b> 150 किलोमीटर (वाया उज्जैन हाईवे)</li>
+                <li><b>भोपाल से:</b> 180 किलोमीटर (वाया शाजापुर मार्ग)</li>
+                <li>यह कस्बा इंदौर-कोटा राष्ट्रीय राजमार्ग के बेहद करीब स्थित है।</li>
+            </ul>
+        </div>
+
+        <div id="air" class="tab-panel">
+            <h4>निकटतम हवाई अड्डा: इंदौर (IDR)</h4>
+            <p>यदि आप हवाई जहाज से आ रहे हैं, तो निकटतम हवाई अड्डा <b>देवी अहिल्याबाई होल्कर एयरपोर्ट, इंदौर</b> है। इंदौर एयरपोर्ट से नलखेड़ा धाम की दूरी करीब 155 किमी है, जहाँ से आप सीधे कार किराए पर लेकर ३.५ घंटे में पहुँच सकते हैं।</p>
         </div>
     </section>
 
-    <section class="booking-section" id="booking">
-        <h4 style="font-family: 'Marcellus'; text-align: center; color: var(--spiritual-red); font-size: 1.5rem; margin-bottom: 20px;">📋 ऑनलाइन पूजा संकल्प / इंक्वायरी फॉर्म</h4>
-        <form onsubmit="sendToWhatsapp(event)">
-            <div class="form-group">
+    <section class="yatra-form-box" id="booking-form">
+        <h4 style="font-family: 'Marcellus'; text-align: center; color: var(--spiritual-red); font-size: 1.5rem; margin-bottom: 25px;">📋 अनुष्ठान संकल्प एवं पूजा इंक्वायरी</h4>
+        <form onsubmit="submitYatraForm(event)">
+            <div class="form-input-group">
                 <label>यजमान का नाम *</label>
-                <input type="text" id="username" class="form-control" placeholder="अपना नाम लिखें" required>
+                <input type="text" id="yName" class="custom-input" placeholder="अपना पूरा नाम लिखें" required>
             </div>
-            <div class="form-group">
+            <div class="form-input-group">
                 <label>गोत्र (यदि ज्ञात हो)</label>
-                <input type="text" id="gotra" class="form-control" placeholder="अपना गोत्र लिखें">
+                <input type="text" id="yGotra" class="custom-input" placeholder="अपना गोत्र दर्ज करें">
             </div>
-            <div class="form-group">
-                <label>समस्या या पूजा का प्रकार *</label>
-                <select id="poojaType" class="form-control" required>
+            <div class="form-input-group">
+                <label>अनुष्ठान/पूजा का चयन करें *</label>
+                <select id="yService" class="custom-input" required>
                     <option value="">-- चयन करें --</option>
-                    <option value="शत्रु बाधा निवारण">शत्रु बाधा निवारण पूजा</option>
+                    <option value="शत्रु बाधा निवारण महायज्ञ">शत्रु बाधा निवारण महायज्ञ</option>
                     <option value="कोर्ट केस विजय अनुष्ठान">कोर्ट केस विजय अनुष्ठान</option>
-                    <option value="तंत्र बाधा मुक्ति">तंत्र बाधा मुक्ति हवन</option>
-                    <option value="सवालाख मंत्र जाप">सवालाख मंत्र जाप</option>
-                    <option value="अन्य विशेष समस्या">अन्य विशेष समस्या समाधान</option>
+                    <option value="तंत्र बाधा व दोष मुक्ति हवन">तंत्र बाधा व दोष मुक्ति हवन</option>
+                    <option value="विशेष सवालाख महामंत्र जाप">विशेष सवालाख महामंत्र जाप</option>
                 </select>
             </div>
-            <button type="submit" class="button-main btn-gold" style="width: 100%; justify-content: center; margin-top: 10px;">⚡ पंडित जी को विवरण भेजें</button>
+            <button type="submit" class="action-button btn-submit-form">⚡ पंडित जी को संकल्प भेजें</button>
         </form>
     </section>
 
-    <footer>
-        <h4>॥ जय माँ पीताम्बरा ॥</h4>
-        <p>विश्व प्रसिद्ध माँ बगलामुखी मंदिर, नलखेड़ा, आगर मालवा (म.प्र.)</p>
-        <p style="color: var(--gold-primary); font-weight: bold; margin-top: 15px;">आचार्य: पंडित अभिषेक शर्मा | मोबाइल: 9352836546</p>
-        <p style="font-size: 0.75rem; color: #777; margin-top: 20px;">© 2026 माँ बगलामुखी अनुष्ठान केंद्र. ऑल राइट्स रिजर्व्ड.</p>
+    <footer class="yatra-footer">
+        <h3>॥ जय माँ पीताम्बरा ॥</h3>
+        <p>प्राचीन माँ बगलामुखी माता मंदिर तीर्थ पीठ, नलखेड़ा, आगर मालवा (म.प्र.)</p>
+        <p style="color: var(--pitambari-yellow); font-weight: bold; margin-top: 15px; font-size: 1.1rem;">
+            प्रधान पुरोहित: पंडित अभिषेक शर्मा | संपर्क: 9352836546
+        </p>
+        <p style="font-size: 0.75rem; color: #666; margin-top: 25px;">© 2026 माँ बगलामुखी धाम सेवा केंद्र. ऑल राइट्स रिजर्व्ड.</p>
     </footer>
 
     <script>
-        function openMenu() {
-            document.getElementById('sideMenu').classList.add('open');
-            document.getElementById('menuOverlay').classList.add('open');
+        // Sidebar Navigation Toggler
+        function toggleSidebarMenu(open) {
+            const sidebar = document.getElementById('yatraSidebar');
+            const overlay = document.getElementById('overlayScreen');
+            if(open) {
+                sidebar.classList.add('active');
+                overlay.classList.add('active');
+            } else {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            }
         }
 
-        function closeMenu() {
-            document.getElementById('sideMenu').classList.remove('open');
-            document.getElementById('menuOverlay').classList.remove('open');
-        }
-
-        // ऑटोमैटिक व्हाट्सएप पर फॉर्म डाटा भेजने का फंक्शन
-        function sendToWhatsapp(event) {
-            event.preventDefault();
-            const name = document.getElementById('username').value;
-            const gotra = document.getElementById('gotra').value || 'ज्ञात नहीं';
-            const pooja = document.getElementById('poojaType').value;
+        // Tab Switching Engine for Route Guides
+        function switchRouteTab(event, id) {
+            const panels = document.querySelectorAll('.tab-panel');
+            const buttons = document.querySelectorAll('.tab-btn');
             
-            const text = `जय माता दी पंडित जी, मैंने वेबसाइट से फॉर्म भरा है:%0A%0A👤 *नाम:* ${name}%0A🧬 *गोत्र:* ${gotra}%0A🚩 *पूजा का प्रकार:* ${pooja}`;
-            window.open(`https://wa.me/919352836546?text=${text}`, '_blank');
+            panels.forEach(panel => panel.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(id).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // Dynamic Secure Form Process Engine
+        function submitYatraForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('yName').value.trim();
+            const gotra = document.getElementById('yGotra').value.trim() || 'ज्ञात नहीं';
+            const service = document.getElementById('yService').value;
+
+            const textMsg = `जय%20माता%20दी%20पंडित%20जी,%20मैंने%20YatraDham%20स्टाइल%20पोर्टल%20से%20पूजा%20का%20संकल्प%20भेजा%20है:%0A%0A👤%20*यजमान:*%20${encodeURIComponent(name)}%0A🧬%20*गोत्र:*%20${encodeURIComponent(gotra)}%0A🚩%20*पूजा:*%20${encodeURIComponent(service)}`;
+            window.open(`https://wa.me/919352836546?text=${textMsg}`, '_blank');
         }
     </script>
 </body>
