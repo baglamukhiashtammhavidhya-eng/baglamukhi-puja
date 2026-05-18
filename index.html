@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maa Baglamukhi Nalkhedha | 3D Devotional Website</title>
-  <meta name="description" content="Maa Baglamukhi Nalkhedha Mandir booking website with 3D design, captions, Das Mahavidya, Bhairav, and contact details." />
+  <title>Maa Baglamukhi Nalkheda | Premium Booking Website</title>
+  <meta name="description" content="Maa Baglamukhi Nalkheda Mirchi Havan online booking website with receipt, WhatsApp, call, Instagram, Facebook, and premium 3D design." />
   <style>
     :root{
-      --bg1:#1b1028;
-      --bg2:#4a1d00;
+      --bg1:#0f0b1f;
+      --bg2:#5b2200;
+      --bg3:#7c3f00;
+      --card:rgba(255,255,255,.08);
+      --card2:rgba(255,255,255,.11);
+      --line:rgba(255,255,255,.16);
+      --text:#fff8ea;
+      --muted:#efddb8;
       --gold:#f7c948;
       --gold2:#ffdf86;
-      --card:rgba(255,255,255,.08);
-      --text:#fff8e8;
-      --muted:#f0dcb0;
-      --line:rgba(255,255,255,.14);
+      --accent:#ff9f43;
+      --success:#1b7f3a;
       --shadow:0 18px 50px rgba(0,0,0,.35);
-      --radius:22px;
+      --radius:24px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -25,71 +29,136 @@
       font-family: Inter, Arial, Helvetica, sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 20% 20%, rgba(247,201,72,.22), transparent 20%),
-        radial-gradient(circle at 80% 10%, rgba(255,223,134,.18), transparent 18%),
-        linear-gradient(135deg, var(--bg1), var(--bg2));
+        radial-gradient(circle at 15% 10%, rgba(247,201,72,.24), transparent 18%),
+        radial-gradient(circle at 85% 15%, rgba(255,223,134,.18), transparent 20%),
+        linear-gradient(135deg,var(--bg1),var(--bg2) 55%,var(--bg3));
       min-height:100vh;
     }
-    .wrap{max-width:1200px;margin:auto;padding:0 18px}
-    .nav{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter:blur(14px);
-      background:rgba(17,10,28,.55);
+    .wrap{max-width:1240px;margin:auto;padding:0 18px}
+    .topbar{
+      position:sticky;top:0;z-index:30;
+      background:rgba(10,8,18,.58);
+      backdrop-filter:blur(16px);
       border-bottom:1px solid var(--line);
     }
-    .navin{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:12px;flex-wrap:wrap}
-    .brand{font-weight:800;letter-spacing:.3px;color:var(--gold2)}
-    .nav a{color:var(--text);text-decoration:none;margin-right:12px;font-weight:600;font-size:14px}
-    .hero{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;
-      padding:34px 0 24px;
+    .nav{
+      display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 0;
     }
-    .hero h1{font-size:clamp(2rem,4vw,4.2rem);line-height:1.05;margin:0 0 12px;text-shadow:0 8px 30px rgba(0,0,0,.45)}
-    .hero p{font-size:1.03rem;line-height:1.8;color:var(--muted);margin:0 0 16px}
+    .brand{
+      display:flex;flex-direction:column;line-height:1.1;
+    }
+    .brand strong{color:var(--gold2);font-size:1.02rem}
+    .brand span{font-size:.88rem;color:var(--muted)}
+    .links a{
+      color:var(--text);text-decoration:none;margin-right:12px;font-weight:700;font-size:14px
+    }
+    .hero{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:center;padding:34px 0 20px;
+    }
+    .hero h1{
+      margin:0 0 12px;font-size:clamp(2.2rem,5vw,4.7rem);line-height:1.02;
+      text-shadow:0 10px 30px rgba(0,0,0,.45);
+    }
+    .hero p{margin:0;color:var(--muted);line-height:1.9;font-size:1.02rem}
+    .badgeRow{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+    .badge{
+      padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);font-size:14px;font-weight:700
+    }
     .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:800;border:1px solid rgba(255,255,255,.18)}
-    .btn.primary{background:linear-gradient(135deg,var(--gold),#ff9f43);color:#2c1600;box-shadow:0 10px 24px rgba(247,201,72,.25)}
+    .btn{
+      display:inline-block;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:900;border:1px solid rgba(255,255,255,.16);transition:.25s
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:linear-gradient(135deg,var(--gold),var(--accent));color:#2c1600}
     .btn.secondary{background:rgba(255,255,255,.08);color:var(--text)}
+    .btn.dark{background:#1d132f;color:var(--text)}
     .heroCard{
-      position:relative;
-      background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05));
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:28px;
-      padding:18px;
-      box-shadow:var(--shadow);
+      position:relative;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.06));
+      border:1px solid rgba(255,255,255,.16);border-radius:30px;padding:18px;box-shadow:var(--shadow);
       transform:perspective(1200px) rotateY(-10deg) rotateX(4deg);
     }
     .heroCard img{width:100%;display:block;border-radius:22px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
-    .glow{position:absolute;inset:auto 18px 18px auto;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle, rgba(255,223,134,.9), rgba(247,201,72,.15), transparent 70%);filter:blur(8px);pointer-events:none}
-    section{padding:20px 0}
+    .glow{position:absolute;inset:auto 16px 16px auto;width:120px;height:120px;border-radius:50%;
+      background:radial-gradient(circle, rgba(255,223,134,.96), rgba(247,201,72,.15), transparent 70%);
+      filter:blur(10px)}
+    section{padding:18px 0}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .card{
       background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);backdrop-filter:blur(10px)
     }
     .card h2,.card h3{margin-top:0;color:var(--gold2)}
-    .chips{display:flex;flex-wrap:wrap;gap:10px}
-    .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);font-size:14px}
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .captionBox{line-height:1.9;color:#fff6df}
-    .mini{font-size:.95rem;color:var(--muted);line-height:1.8}
-    .contactGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .contactItem{padding:16px;border-radius:18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
-    .contactItem strong{display:block;margin-bottom:6px;color:var(--gold2)}
-    .foot{padding:28px 0 40px;color:#f7e9c7;text-align:center;opacity:.92}
-    .table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:18px}
-    .table td,.table th{border-bottom:1px solid rgba(255,255,255,.12);padding:12px;text-align:left;vertical-align:top}
-    .table th{color:var(--gold2)}
-    @media (max-width: 980px){.hero,.two,.grid,.contactGrid{grid-template-columns:1fr}.heroCard{transform:none}}
+    .mini{color:var(--muted);line-height:1.8;font-size:.96rem}
+    .floatingBar{
+      position:fixed;left:0;right:0;bottom:0;z-index:50;
+      background:rgba(8,8,14,.9);backdrop-filter:blur(12px);
+      border-top:1px solid rgba(255,255,255,.12);
+      padding:10px 14px;
+    }
+    .floatingBar .inner{
+      max-width:1240px;margin:auto;display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap
+    }
+    .floatingBar a{
+      text-decoration:none;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800;font-size:14px;
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)
+    }
+    .floatingBar a.call{background:#1f1f3f}
+    .floatingBar a.wa{background:#167c3a}
+    .floatingBar a.ig{background:#6f2dbd}
+    .floatingBar a.fb{background:#224f9c}
+    label{display:block;margin:12px 0 6px;font-weight:800}
+    input,select,textarea{
+      width:100%;padding:12px 14px;border-radius:14px;border:1px solid #d6d6d6;font-size:15px;outline:none
+    }
+    textarea{min-height:110px;resize:vertical}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .full{grid-column:1/-1}
+    .notice{
+      background:#fff3cd;color:#6a4d00;border:1px solid #f1d27a;padding:12px 14px;border-radius:14px;line-height:1.7
+    }
+    .receipt{
+      display:none;margin-top:18px;background:#fffef8;color:#1c1c1c;border:2px solid var(--gold);border-radius:18px;padding:18px
+    }
+    .receipt h3{margin-top:0;color:#8b6500}
+    .status{
+      display:inline-block;background:#e8f6ec;color:var(--success);padding:6px 10px;border-radius:999px;font-size:13px;font-weight:900
+    }
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .g{
+      min-height:150px;border-radius:18px;background:
+      linear-gradient(135deg, rgba(247,201,72,.2), rgba(255,255,255,.06)),
+      radial-gradient(circle at top, rgba(255,255,255,.2), transparent 50%);
+      border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);padding:14px;display:flex;align-items:end
+    }
+    .g span{font-weight:900;text-shadow:0 4px 14px rgba(0,0,0,.45)}
+    footer{
+      padding:26px 0 86px;text-align:center;color:#f3e6bf;opacity:.95;line-height:1.8
+    }
+    @media (max-width: 980px){
+      .hero,.grid,.two,.gallery,.row{grid-template-columns:1fr}
+      .heroCard{transform:none}
+      .floatingBar .inner{justify-content:center}
+    }
+    @media print{
+      .topbar,.floatingBar,footer,.no-print{display:none!important}
+      body{background:#fff;color:#000}
+      .card{box-shadow:none;border:none;background:#fff}
+      .receipt{display:block!important}
+    }
   </style>
 </head>
 <body>
-  <div class="nav">
-    <div class="wrap navin">
-      <div class="brand">Maa Baglamukhi Nalkhedha</div>
-      <div>
+  <div class="topbar">
+    <div class="wrap nav">
+      <div class="brand">
+        <strong>Maa Baglamukhi Nalkheda</strong>
+        <span>मिर्ची हवन • ऑनलाइन बुकिंग • रसीद</span>
+      </div>
+      <div class="links no-print">
         <a href="#about">About</a>
-        <a href="#mahavidya">Das Mahavidya</a>
-        <a href="#bhairav">Bhairav</a>
+        <a href="#booking">Booking</a>
+        <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -98,112 +167,208 @@
   <main class="wrap">
     <section class="hero">
       <div>
-        <h1>जय माँ बगलामुखी नलखेड़ा</h1>
-        <p>Madhya Pradesh ke prasiddh Maa Baglamukhi Mandir Nalkhedha ke liye ek modern 3D-style devotional website. Isme booking, captions, social details aur attraction-focused design sab included hai.</p>
-        <div class="cta">
-          <a class="btn primary" href="#contact">Booking / Enquiry</a>
-          <a class="btn secondary" href="#captions">Captions</a>
+        <h1>माँ बगलामुखी नलखेड़ा<br>ऑनलाइन हवन बुकिंग</h1>
+        <p>यह एक premium conversion-focused website है, जिसे ज्यादा से ज्यादा भक्तों को आकर्षित करने, online booking लेने, और तुरंत receipt देने के लिए बनाया गया है। इसमें call, WhatsApp, Facebook, Instagram, और confirmation flow सब शामिल हैं।</p>
+
+        <div class="badgeRow">
+          <span class="badge">मिर्ची हवन</span>
+          <span class="badge">पूजन बुकिंग</span>
+          <span class="badge">तत्काल रसीद</span>
+          <span class="badge">मेड इन इंडिया डिज़ाइन</span>
+        </div>
+
+        <div class="cta no-print">
+          <a class="btn primary" href="#booking">Book Now</a>
+          <a class="btn secondary" href="#contact">Call / WhatsApp</a>
+          <a class="btn dark" href="#captions">Captions</a>
         </div>
       </div>
+
       <div class="heroCard">
-        <img src="baglamukhi_hero.png" alt="Maa Baglamukhi Nalkhedha 3D banner" />
+        <img src="baglamukhi_hero.png" alt="Maa Baglamukhi Nalkheda devotional banner" />
         <div class="glow"></div>
       </div>
     </section>
 
     <section class="grid" id="about">
       <div class="card">
-        <h2>Maa Baglamukhi Mandir</h2>
-        <p class="mini">Maa Baglamukhi Nalkhedha, Madhya Pradesh, ek shaktipith anubhuti deta hai jahan bhakt vijay, raksha aur sankat-nivaran ke liye darshan karte hain. Website ka look divine aur premium rakha gaya hai.</p>
+        <h2>मंदिर का महत्व</h2>
+        <p class="mini">माँ बगलामुखी नलखेड़ा, मध्य प्रदेश, शक्ति साधना और विजय की आस्था का प्रमुख केंद्र है। यहाँ विशेष मिर्ची हवन और पूजन के लिए देश भर से भक्त आते हैं।</p>
       </div>
       <div class="card">
-        <h2>Contact Details</h2>
-        <p class="mini"><strong>Mobile:</strong> 952836546<br><strong>Instagram:</strong> @maa_baglamukhi_protection<br><strong>Facebook:</strong> Maa Baglamukhi protection<br><strong>UPI:</strong> 9352836546-3@ybl</p>
+        <h2>क्यों यह design बेहतर है</h2>
+        <p class="mini">Strong hero section, visible buttons, clean form, receipt output, and premium 3D look वेबसाइट को अधिक trustworthy और attractive बनाते हैं।</p>
       </div>
       <div class="card">
-        <h2>Design Style</h2>
-        <p class="mini">3D depth, golden gradients, glassmorphism cards, temple glow effects, and mobile-friendly layout ke saath attractive appearance di gayi hai.</p>
+        <h2>महत्वपूर्ण details</h2>
+        <p class="mini"><strong>Mobile:</strong> 9352836546<br><strong>Temple:</strong> Maa Baglamukhi Mandir, Nalkheda<br><strong>State:</strong> Madhya Pradesh</p>
       </div>
     </section>
 
     <section class="two">
-      <div class="card" id="captions">
-        <h2>Caption for Maa Baglamukhi Nalkhedha</h2>
-        <div class="captionBox">
-          जय माँ बगलामुखी नलखेड़ा।<br>
-          यह पावन धाम शक्ति, साधना और संरक्षण का दिव्य केंद्र है।<br>
-          यहाँ हर भक्त माँ के चरणों में अपनी मनोकामना, विजय और शांति की अर्जी लगाता है।<br>
-          स्वर्णिम आभा, मंत्र शक्ति और अटूट आस्था के साथ यह स्थान हृदय को आध्यात्मिक ऊर्जा से भर देता है।
+      <div class="card" id="booking">
+        <h2>ऑनलाइन बुकिंग फॉर्म</h2>
+        <form id="form">
+          <div class="row">
+            <div>
+              <label>Yajman Name</label>
+              <input id="name" type="text" placeholder="अपना नाम" required />
+            </div>
+            <div>
+              <label>Gotra</label>
+              <input id="gotra" type="text" placeholder="अपना gotra" required />
+            </div>
+            <div>
+              <label>Mobile Number</label>
+              <input id="mobile" type="tel" placeholder="मोबाइल नंबर" required />
+            </div>
+            <div>
+              <label>City</label>
+              <input id="city" type="text" placeholder="आपका शहर" />
+            </div>
+            <div>
+              <label>Date</label>
+              <input id="date" type="date" required />
+            </div>
+            <div>
+              <label>Time</label>
+              <input id="time" type="time" required />
+            </div>
+            <div class="full">
+              <label>Service Type</label>
+              <select id="service">
+                <option>मिर्ची हवन</option>
+                <option>माँ बगलामुखी पूजन</option>
+                <option>संकल्प पूजन</option>
+                <option>विशेष अनुष्ठान</option>
+                <option>भोग / आरती</option>
+              </select>
+            </div>
+            <div class="full">
+              <label>Purpose / Sankalp</label>
+              <textarea id="purpose" placeholder="कार्य सिद्धि, शांति, शत्रु बाधा, विवाह, व्यापार, रोग-निवारण..."></textarea>
+            </div>
+            <div class="full">
+              <div class="notice">
+                <input id="consent" type="checkbox" required />
+                <span>मैं अपनी जानकारी booking और receipt generation के लिए देने की सहमति देता/देती हूँ।</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta no-print">
+            <button class="btn primary" type="submit">Receipt Generate करें</button>
+            <button class="btn secondary" type="button" onclick="window.print()">Print Receipt</button>
+          </div>
+        </form>
+
+        <div class="receipt" id="receipt">
+          <h3>Booking Receipt</h3>
+          <p><span class="status">Confirmed / Pending</span></p>
+          <div id="receiptContent" style="line-height:1.9;"></div>
         </div>
       </div>
-      <div class="card">
-        <h2>Das Mahavidya Caption</h2>
-        <div class="captionBox">
-          दस महाविद्याएँ आदिशक्ति के दस दिव्य स्वरूप हैं।<br>
-          ये साधक को ज्ञान, साहस, शक्ति, रक्षा और मोक्ष का मार्ग दिखाती हैं।<br>
-          माँ बगलामुखी इन्हीं महाविद्याओं में स्थिरता, स्तंभन और विजय की अधिष्ठात्री मानी जाती हैं।
+
+      <div class="card" id="contact">
+        <h2>Call Buttons</h2>
+        <p class="mini">आपके भक्त सीधे call, WhatsApp, Facebook, या Instagram से जुड़ सकें — यही सबसे effective arrangement है.</p>
+
+        <div class="cta no-print">
+          <a class="btn dark" href="tel:9352836546">Call Now</a>
+          <a class="btn primary" href="https://wa.me/919352836546?text=Namaste%20Maa%20Baglamukhi%20booking%20chahiye" target="_blank">WhatsApp</a>
+          <a class="btn secondary" href="https://instagram.com/maa_baglamukhi_protection" target="_blank">Instagram</a>
+          <a class="btn secondary" href="https://facebook.com/" target="_blank">Facebook</a>
+        </div>
+
+        <div class="notice" style="margin-top:16px">
+          <strong>Note:</strong> Facebook और Instagram के exact public URLs final version me replace karna best rahega.
+        </div>
+
+        <div class="card" style="margin-top:16px;background:rgba(255,255,255,.05)">
+          <h3>Website Message</h3>
+          <p class="mini">जय माँ बगलामुखी नलखेड़ा — शक्ति, रक्षा, साधना, और विजय की दिव्य भूमि। आज ही अपना ऑनलाइन हवन बुक करें और पवित्र रसीद प्राप्त करें।</p>
         </div>
       </div>
     </section>
 
-    <section class="card" id="mahavidya">
-      <h2>Das Mahavidya aur Bhairav</h2>
-      <table class="table">
-        <tr><th>Mahavidya</th><th>Short Caption</th><th>Associated Bhairav Caption</th></tr>
-        <tr><td>1. Kali</td><td>कालरात्रि रूप में समय पर विजय.</td><td>काल भैरव — रक्षा और अनुशासन के प्रहरी.</td></tr>
-        <tr><td>2. Tara</td><td>संकट से पार लगाने वाली तारिणी शक्ति.</td><td>उग्र भैरव — साधना की तीव्र रक्षा.</td></tr>
-        <tr><td>3. Tripura Sundari</td><td>सौंदर्य और सौभाग्य की अधिष्ठात्री.</td><td>चंद्र भैरव — सौम्य तेज और शांति.</td></tr>
-        <tr><td>4. Bhuvaneshwari</td><td>सृष्टि और विस्तार की सम्राज्ञी.</td><td>बटुक भैरव — सरल, सुरक्षित मार्गदर्शन.</td></tr>
-        <tr><td>5. Bhairavi</td><td>तप, तेज और साधना की शक्ति.</td><td>संहार भैरव — नकारात्मकता का विनाश.</td></tr>
-        <tr><td>6. Chhinnamasta</td><td>त्याग, जागरण और भीतरी शक्ति.</td><td>प्रचंड भैरव — भीतर की ऊर्जा का जागरण.</td></tr>
-        <tr><td>7. Dhumavati</td><td>वैराग्य और गहन बुद्धि का रूप.</td><td>कपाल भैरव — वैराग्य और वैराग्य-शक्ति.</td></tr>
-        <tr><td>8. Baglamukhi</td><td>वाणी, विरोध और संकट पर स्तंभन.</td><td>महाभैरव — संरक्षण और स्थिर विजय.</td></tr>
-        <tr><td>9. Matangi</td><td>विद्या, वाणी और कला की देवी.</td><td>नाद भैरव — शब्द और साधना का स्वर.</td></tr>
-        <tr><td>10. Kamala</td><td>समृद्धि और शुभ फल की देवी.</td><td>आनंद भैरव — सौभाग्य और समृद्धि के रक्षक.</td></tr>
+    <section class="card" id="gallery">
+      <h2>Gallery Style Section</h2>
+      <div class="gallery">
+        <div class="g"><span>Temple Aura</span></div>
+        <div class="g"><span>3D Glow</span></div>
+        <div class="g"><span>Golden Faith</span></div>
+        <div class="g"><span>Devotional Spirit</span></div>
+      </div>
+    </section>
+
+    <section class="card" id="captions">
+      <h2>Social Captions</h2>
+      <table style="width:100%;border-collapse:collapse">
+        <tr><th style="text-align:left;padding:12px;color:var(--gold2)">Topic</th><th style="text-align:left;padding:12px;color:var(--gold2)">Caption</th></tr>
+        <tr><td style="padding:12px;border-bottom:1px solid rgba(255,255,255,.12)">Maa Baglamukhi Nalkheda</td><td style="padding:12px;border-bottom:1px solid rgba(255,255,255,.12)">जय माँ बगलामुखी नलखेड़ा — यह धाम शक्ति, सुरक्षा और विजय का दिव्य केंद्र है।</td></tr>
+        <tr><td style="padding:12px;border-bottom:1px solid rgba(255,255,255,.12)">Mirchi Havan</td><td style="padding:12px;border-bottom:1px solid rgba(255,255,255,.12)">माँ बगलामुखी का मिर्ची हवन संकट, बाधा और नकारात्मक ऊर्जा के निवारण के लिए विशेष माना जाता है।</td></tr>
+        <tr><td style="padding:12px;border-bottom:1px solid rgba(255,255,255,.12)">Das Mahavidya</td><td style="padding:12px;border-bottom:1px solid rgba(255,255,255,.12)">दस महाविद्याएँ आदिशक्ति के दस दिव्य रूप हैं, जो साधक को शक्ति, ज्ञान और मोक्ष की ओर ले जाती हैं।</td></tr>
+        <tr><td style="padding:12px">Bhairav</td><td style="padding:12px">भैरव देव माँ की साधना के रक्षक हैं और भक्तों को भय, बाधा तथा अवरोध से संरक्षण देते हैं।</td></tr>
       </table>
     </section>
 
-    <section class="grid" id="bhairav">
-      <div class="card">
-        <h3>Bhavya Bhairav Caption</h3>
-        <p class="mini">भैरव देव, माँ बगलामुखी की साधना के रक्षक स्वरूप हैं। उनकी कृपा से साधना सुरक्षित, स्थिर और फलदायी बनती है।</p>
-      </div>
-      <div class="card">
-        <h3>Temple Booking Caption</h3>
-        <p class="mini">माँ बगलामुखी नलखेड़ा मंदिर में दर्शन, पूजन और विशेष अनुष्ठान के लिए ऑनलाइन संपर्क करें और दिव्य आशीर्वाद पाएं।</p>
-      </div>
-      <div class="card">
-        <h3>Social Caption</h3>
-        <p class="mini">Follow करें @maa_baglamukhi_protection और माँ बगलामुखी की कृपा, मंदिर दर्शन, भजन और साधना अपडेट्स पाएं।</p>
-      </div>
-    </section>
-
-    <section class="card" id="contact">
-      <h2>Contact & Booking</h2>
-      <div class="contactGrid">
-        <div class="contactItem"><strong>Mobile</strong>952836546</div>
-        <div class="contactItem"><strong>Instagram</strong>@maa_baglamukhi_protection</div>
-        <div class="contactItem"><strong>Facebook</strong>Maa Baglamukhi protection</div>
-        <div class="contactItem"><strong>UPI</strong>9352836546-3@ybl</div>
-      </div>
-      <p class="mini" style="margin-top:14px;">Aap is section ko WhatsApp button, Google Maps, aur enquiry form ke saath aur powerful bana sakte hain. Agar mobile number ya UPI public hai, to use final upload se pehle verify kar lein.</p>
-    </section>
-
     <section class="card">
-      <h2>3D Website Style Features</h2>
-      <div class="chips">
-        <span class="chip">Glassmorphism</span>
-        <span class="chip">Golden Glow</span>
-        <span class="chip">Temple Aura</span>
-        <span class="chip">Responsive Layout</span>
-        <span class="chip">Hero Image</span>
-        <span class="chip">Devotional Theme</span>
-      </div>
+      <h2>Professional Features</h2>
+      <p class="mini">इस version में sticky header, floating action buttons, animated feel, booking form, receipt generator, social contact buttons, gallery-like cards, और strong CTA hierarchy दी गई है।</p>
     </section>
   </main>
 
-  <div class="foot wrap">
-    © 2026 Maa Baglamukhi Nalkhedha | Madhya Pradesh | Devotional 3D Website
+  <div class="floatingBar no-print">
+    <div class="inner">
+      <a class="call" href="tel:9352836546">📞 Call</a>
+      <a class="wa" href="https://wa.me/919352836546?text=Namaste%20Maa%20Baglamukhi%20booking%20chahiye" target="_blank">💬 WhatsApp</a>
+      <a class="ig" href="https://instagram.com/maa_baglamukhi_protection" target="_blank">📷 Instagram</a>
+      <a class="fb" href="https://facebook.com/" target="_blank">📘 Facebook</a>
+    </div>
   </div>
+
+  <footer>
+    © 2026 Maa Baglamukhi Nalkheda | Madhya Pradesh | Premium Online Havan Booking
+  </footer>
+
+  <script>
+    const form = document.getElementById('form');
+    const receipt = document.getElementById('receipt');
+    const receiptContent = document.getElementById('receiptContent');
+
+    const bookingId = () => 'MBN' + Date.now().toString().slice(-8);
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const id = bookingId();
+      const name = document.getElementById('name').value.trim();
+      const gotra = document.getElementById('gotra').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
+      const city = document.getElementById('city').value.trim();
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const service = document.getElementById('service').value;
+      const purpose = document.getElementById('purpose').value.trim();
+      const now = new Date().toLocaleString('hi-IN');
+
+      receiptContent.innerHTML = `
+        <strong>Booking ID:</strong> ${id}<br>
+        <strong>Yajman Name:</strong> ${name}<br>
+        <strong>Gotra:</strong> ${gotra}<br>
+        <strong>Mobile:</strong> ${mobile}<br>
+        <strong>City:</strong> ${city || '-'}<br>
+        <strong>Date:</strong> ${date}<br>
+        <strong>Time:</strong> ${time}<br>
+        <strong>Service:</strong> ${service}<br>
+        <strong>Purpose:</strong> ${purpose || '-'}<br>
+        <strong>Temple:</strong> Maa Baglamukhi Mandir, Nalkheda, Madhya Pradesh<br>
+        <strong>Booking Time:</strong> ${now}<br>
+        <strong>Payment Status:</strong> Pending / Confirmed
+      `;
+
+      receipt.style.display = 'block';
+      receipt.scrollIntoView({behavior:'smooth'});
+    });
+  </script>
 </body>
 </html>
